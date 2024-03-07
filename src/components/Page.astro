@@ -1,0 +1,49 @@
+---
+import Underline from "./Underline.astro";
+const { pageData } = Astro.props;
+---
+
+<>
+  <main class="container-fluid container-page">
+    <div class="container-titles">
+      <h2 class="container-title display-5">{pageData.title}</h2>
+      <h1 class="container-subtitle display-2">{pageData.subTitle}</h1>
+    </div>
+
+    <Underline marginLine="150px" />
+    <div class="container-main">
+      <slot />
+    </div>
+  </main>
+</>
+<style>
+  .container-page {
+    position: relative;
+    height: 100vw;
+    overflow: hidden;
+  }
+
+  .container-main {
+    position: fixed;
+    bottom: unset;
+    height: 70vh;
+    width: 50vw;
+    padding-bottom: 150px;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .container-main::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media screen and (max-width: 786px) {
+    .container-main {
+      bottom: unset;
+      height: 500px;
+      width: 80vw;
+      padding-bottom: 100px;
+    }
+  }
+</style>

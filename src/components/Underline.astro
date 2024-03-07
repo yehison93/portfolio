@@ -1,0 +1,52 @@
+---
+const marginLine = Astro.props;
+---
+
+<div class="container-frames">
+  <div class="frames">
+    <div class="line horizontal"></div>
+  </div>
+</div>
+
+<style define:vars={marginLine}>
+  :root {
+    --large-horizontal-line-frame: 50vw;
+    --large-vertical-line-frame: 80vh;
+    --weight-line-frame: 7px;
+  }
+  .container-frames {
+    position: absolute;
+    top: var(--marginLine);
+  }
+  .frame {
+    position: relative;
+  }
+  .line {
+    position: absolute;
+    width: var(--weight-line-frame);
+    background: linear-gradient(var(--colorOne) 50%, transparent),
+      linear-gradient(white, transparent 80%);
+  }
+
+  .frames .horizontal {
+    height: var(--large-horizontal-line-frame);
+    top: calc(
+      (var(--large-horizontal-line-frame) / -2) + (var(--weight-line-frame) / 2)
+    );
+    left: calc(
+      (var(--large-horizontal-line-frame) / 2) - (var(--weight-line-frame) / 2)
+    );
+    transform: rotate(-90deg);
+  }
+
+  @media screen and (max-width: 600px) {
+    :root {
+      --large-horizontal-line-frame: 90vw;
+      --weight-line-frame: 5px;
+    }
+    .container-frames {
+      position: absolute;
+      top: 90px;
+    }
+  }
+</style>

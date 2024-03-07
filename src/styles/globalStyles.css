@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Anta&display=swap");
+@font-face {
+  font-family: "cascadia code";
+  src: url("../assets/fonts/CascadiaCode.ttf") format("truetype");
+}
+:root{
+  --colorOne: #00faf8;
+  --colorTwo: #2f82f5;
+  --colorThree: #005cfa;
+  --colorFour: #001821;
+  --fontTitle: anta;
+  --fontText: cascadia code;
+}
+
+
+*{
+  font-size: 16px;
+  font-family: var(--fontText), Impact, system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  user-select: none;
+  text-align: justify;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--colorFour);
+  overflow: hidden;
+  background-color: var(--colorFour);
+}
+
+h1{
+  font-family: var(--fontTitle), 'Arial Narrow Bold', sans-serif
+}

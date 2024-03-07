@@ -1,0 +1,57 @@
+---
+
+---
+
+<div class="container-frames">
+  <div class="frames">
+    <div class="line vertical"></div>
+    <div class="line horizontal"></div>
+  </div>
+</div>
+
+<style>
+  :root {
+    --large-horizontal-line-frame: 50vw;
+    --large-vertical-line-frame: 80vh;
+    --margin-line-frame: 30px;
+    --weight-line-frame: 7px;
+  }
+  .container-frames {
+    position: absolute;
+    left: var(--margin-line-frame);
+    top: var(--margin-line-frame);
+  }
+  .frame {
+    position: relative;
+  }
+  .line {
+    position: absolute;
+    width: var(--weight-line-frame);
+    background: linear-gradient(var(--colorOne) 50%, transparent),
+      linear-gradient(white, transparent 80%);
+  }
+
+  .frames .horizontal {
+    height: var(--large-horizontal-line-frame);
+    top: calc(
+      (var(--large-horizontal-line-frame) / -2) + (var(--weight-line-frame) / 2)
+    );
+    left: calc(
+      (var(--large-horizontal-line-frame) / 2) - (var(--weight-line-frame) / 2)
+    );
+    transform: rotate(-90deg);
+  }
+  .frames .vertical {
+    height: var(--large-vertical-line-frame);
+    top: 0;
+    left: 0;
+  }
+
+  @media screen and (max-width: 600px) {
+    :root {
+      --large-horizontal-line-frame: 90vw;
+      --margin-line-frame: 20px;
+      --weight-line-frame: 5px;
+    }
+  }
+</style>

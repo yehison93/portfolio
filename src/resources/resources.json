@@ -1,0 +1,21 @@
+{
+  "info":{
+    "avatar":{
+      "name": "Yehison Perdomo",
+      "birthDate": "1993/11/10",
+      "email": "yehison93@gmail.com",
+      "title": "Desarrollador UX/UI",
+      "socialMedia": {
+        "LinkedIn": "",
+        "GitHub": "",
+        "Twitter": "",
+        "Instagram": ""
+      }
+    }
+  },
+  "fonts": {
+    "anta": "Anta",
+    "cascadiaCode": "Cascadia Code",
+    "Rubik": "Rubik"
+  }
+}

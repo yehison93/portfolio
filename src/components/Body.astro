@@ -1,0 +1,36 @@
+---
+import Avatar from "./Avatar.astro";
+import Contact from "./Contact.astro";
+import Page from "../components/Page.astro";
+const { pageData } = Astro.props;
+---
+
+<>
+  <div class="container container-body">
+    <div class="row">
+      <div class="col-xs-12 col-md-5 contaniner-contact-body">
+        <Avatar />
+        <Contact />
+      </div>
+      <div class="col-xs-12 col-md-7 container-main">
+        <Page pageData={pageData}><slot /></Page>
+      </div>
+    </div>
+  </div>
+</>
+
+<style>
+  .contaniner-contact-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 70vh;
+  }
+
+  @media screen and (max-width: 768px) {
+    .contaniner-contact-body {
+      height: 20vh;
+    }
+  }
+</style>

@@ -1,0 +1,46 @@
+---
+import resorces from "../resources/resources.json";
+const dates = resorces.info.avatar;
+---
+
+<div class="container container-name-contact">
+  <>
+    <h1 class="container-firts-name display-1 color-transition">
+      {dates.name.split(" ")[0]}
+    </h1>
+    <h1 class="container-last-name display-1 color-transition">
+      {dates.name.split(" ")[1]}
+    </h1>
+  </>
+</div>
+
+<style>
+  .container-name-contact {
+    max-width: 500px;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .container-firts-name {
+    text-align: start;
+    margin: -20px 0;
+    padding: 0;
+  }
+  .container-last-name {
+    text-align: end;
+    margin: -20px 0;
+    padding: 0;
+  }
+
+  @media screen and (max-width: 992px) {
+    .container-name-contact {
+      max-width: 300px;
+    }
+    .container-firts-name {
+      margin: -5px 0;
+    }
+    .container-last-name {
+      margin: -5px 0;
+    }
+  }
+</style>

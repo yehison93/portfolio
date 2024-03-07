@@ -1,0 +1,21 @@
+---
+import Header from "./Header.astro";
+import Body from "./Body.astro";
+const { pageData } = Astro.props;
+---
+
+<>
+  <div class="container-main">
+    <Header />
+    <Body pageData={pageData}>
+      <slot />
+    </Body>
+  </div>
+</>
+<style>
+  .container-main {
+    width: 100vw;
+    height: 100vh;
+    padding: 30px;
+  }
+</style>
