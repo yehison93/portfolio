@@ -1,39 +1,42 @@
 ---
-const logo = "/src/assets/image/Yehison-05.png";
+import { Image } from "astro:assets";
+import localLogoImage from "../assets/image/Yehison-05.png";
 ---
 
-<header>
-  <nav class="container-fluid bg-body-trasnparent">
-    <div class="row">
-      <div class="col container-logo-header">
-        <a class="navbar-brand" href="#">
-          <img
-            src={logo}
-            alt="Logo"
-            class="d-inline-block align-text-top image-logo"
-          />
-        </a>
-      </div>
-      <div class="col container-icon-header">
-        <button class="navbar-toggler button-header" type="button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            class="bi bi-list"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
-            ></path>
-          </svg>
-        </button>
-      </div>
+<header class="container bg-body-trasnparent container-header">
+  <div class="row">
+    <div class="col container-logo-header">
+      <a class="navbar-brand" href="#">
+        <Image
+          src={localLogoImage}
+          width={100}
+          alt="Logo"
+          class="d-inline-block align-text-top image-logo"
+        />
+      </a>
     </div>
-  </nav>
+    <div class="col container-icon-header">
+      <button class="navbar-toggler button-header" type="button">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          class="bi bi-list"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
 </header>
 
 <style>
+  .container-header {
+    height: 10vh;
+  }
   .container-logo-header {
     display: flex;
     justify-content: start;
@@ -46,7 +49,7 @@ const logo = "/src/assets/image/Yehison-05.png";
   }
 
   .image-logo {
-    width: calc(4rem + 5vw);
+    height: 100%;
   }
 
   .button-header {
