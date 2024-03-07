@@ -6,13 +6,8 @@ import localLogoImage from "../assets/image/logo_yehison.png";
 <header class="container bg-body-trasnparent container-header">
   <div class="row">
     <div class="col container-logo-header">
-      <a class="navbar-brand" href="#">
-        <Image
-          src={localLogoImage}
-          width="100"
-          alt="Logo de Yehison"
-          class="image-logo"
-        />
+      <a href="#">
+        <Image src={localLogoImage} alt="Logo de Yehison" class="image-logo" />
       </a>
     </div>
     <div class="col container-icon-header">
@@ -35,7 +30,7 @@ import localLogoImage from "../assets/image/logo_yehison.png";
 
 <style>
   .container-header {
-    height: 10vh;
+    height: calc(20px + 3vw);
   }
   .container-logo-header {
     display: flex;
@@ -47,8 +42,12 @@ import localLogoImage from "../assets/image/logo_yehison.png";
     justify-content: end;
     align-items: center;
   }
+  .container-logo-header .image-logo {
+    width: calc(80px + 3vw);
+    height: auto;
+  }
   .button-header {
     color: aliceblue;
-    width: 3rem;
+    width: calc(2rem + 2vw);
   }
 </style>
