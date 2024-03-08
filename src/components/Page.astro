@@ -24,11 +24,17 @@ const { pageData } = Astro.props;
   }
 
   .container-main {
-    position: fixed;
-    bottom: unset;
-    height: 70vh;
+    /* position: fixed; */
+    /* top: 0; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: justify;
+    margin: auto;
+    hyphens: auto;
+    height: 60vh;
     width: 50vw;
-    padding-bottom: 150px;
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -43,7 +49,6 @@ const { pageData } = Astro.props;
       bottom: unset;
       height: 500px;
       width: 80vw;
-      padding-bottom: 100px;
     }
   }
 </style>
