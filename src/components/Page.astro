@@ -1,17 +1,25 @@
 ---
-import { fade } from "astro:transitions";
+import { fade, slide } from "astro:transitions";
 import Underline from "./Underline.astro";
 const { pageData } = Astro.props;
 ---
 
 <>
   <main class="container-fluid container-page">
-    <div class="container-titles">
+    <div
+      class="container-titles"
+      transition:animate={slide({ duration: "1s" })}
+    >
       <h2 class="container-title display-5">{pageData.title}</h2>
       <h1 class="container-subtitle display-2">{pageData.subTitle}</h1>
     </div>
     <Underline marginLine="150px" />
-    <div class="container-main">
+    <div
+      class="container-main"
+      transition:animate={slide({
+        duration: "1s",
+      })}
+    >
       <div>
         <slot />
         <div class="empty-space"></div>

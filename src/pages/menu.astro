@@ -1,4 +1,5 @@
 ---
+import { slide } from "astro:transitions";
 import Layout from "../layouts/Layout.astro";
 const pageData = {
   title: "Navega en el",
@@ -15,7 +16,10 @@ const allPage = {
 <Layout pageData={pageData}>
   <div class="container-fluid">
     <nav>
-      <ul class="container-lista-menu">
+      <ul
+        class="container-lista-menu"
+        
+      >
         {
           Object.entries(allPage).map(([key, value]) => (
             <li>
