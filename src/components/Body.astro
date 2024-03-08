@@ -2,17 +2,21 @@
 import Avatar from "./Avatar.astro";
 import Contact from "./Contact.astro";
 import Page from "../components/Page.astro";
+import { fade } from "astro:transitions";
 const { pageData } = Astro.props;
 ---
 
 <>
   <div class="container container-body">
     <div class="row">
-      <div class="col-xs-12 col-md-5 contaniner-contact-body">
+      <div class="col-xs-12 col-lg-5 contaniner-contact-body">
         <Avatar />
         <Contact />
       </div>
-      <div class="col-xs-12 col-md-7 container-main">
+      <div
+        class="col-xs-12 col-lg-7 container-main"
+        transition:animate={fade({ duration: "1s" })}
+      >
         <Page pageData={pageData}><slot /></Page>
       </div>
     </div>
@@ -28,7 +32,10 @@ const { pageData } = Astro.props;
     height: 70vh;
   }
 
-  @media screen and (max-width: 768px) {
+  .contaniner-contact-body {
+  }
+
+  @media screen and (max-width: 992px) {
     .contaniner-contact-body {
       height: 20vh;
     }

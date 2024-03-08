@@ -1,4 +1,5 @@
 ---
+import { fade } from "astro:transitions";
 import Underline from "./Underline.astro";
 const { pageData } = Astro.props;
 ---
@@ -9,32 +10,26 @@ const { pageData } = Astro.props;
       <h2 class="container-title display-5">{pageData.title}</h2>
       <h1 class="container-subtitle display-2">{pageData.subTitle}</h1>
     </div>
-
     <Underline marginLine="150px" />
     <div class="container-main">
-      <slot />
+      <div>
+        <slot />
+        <div class="empty-space"></div>
+      </div>
     </div>
   </main>
 </>
 <style>
   .container-page {
     position: relative;
-    height: 100vw;
-    overflow: hidden;
   }
 
   .container-main {
-    /* position: fixed; */
-    /* top: 0; */
     display: flex;
-    justify-content: center;
-    align-items: center;
     align-content: center;
     text-align: justify;
-    margin: auto;
     hyphens: auto;
-    height: 60vh;
-    width: 50vw;
+    height: calc(100vh - 200px);
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -44,11 +39,13 @@ const { pageData } = Astro.props;
     display: none;
   }
 
-  @media screen and (max-width: 786px) {
+  .empty-space {
+    height: 150px;
+  }
+
+  @media screen and (max-width: 992px) {
     .container-main {
-      bottom: unset;
-      height: 500px;
-      width: 80vw;
+      height: calc(70vh - 120px);
     }
   }
 </style>

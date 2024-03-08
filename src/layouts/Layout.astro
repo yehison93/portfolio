@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Frame from "../components/Frame.astro";
 import Main from "../components/Main.astro";
 import "../styles/globalStyles.css";
+import { ViewTransitions, fade } from "astro:transitions";
 const { pageData } = Astro.props;
 ---
 
@@ -15,11 +16,22 @@ const { pageData } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageData.title}</title>
+    <ViewTransitions />
   </head>
   <body>
     <Frame />
     <Main pageData={pageData}>
       <slot />
     </Main>
+    <div class="shadow-botton"></div>
+    <style>
+      .shadow-botton {
+        position: absolute;
+        bottom: 0;
+        width: 100vw;
+        min-height: 10vh;
+        background: linear-gradient(0deg, #001821f1 30%, #0018216d);
+      }
+    </style>
   </body>
 </html>

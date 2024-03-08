@@ -39,14 +39,14 @@ const marginLine = Astro.props;
     transform: rotate(-90deg);
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 992px) {
     :root {
       --large-horizontal-line-frame: 70vw;
       --weight-line-frame: 5px;
     }
     .container-frames {
       position: absolute;
-      top: 90px;
+      top: calc(80px + 5vw);
     }
   }
 </style>

@@ -1,6 +1,8 @@
 ---
 import resources from "../resources/resources.json";
 
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
 const data = resources.info.avatar;
 const sizeIcon = 30;
 ---
@@ -54,6 +56,7 @@ const sizeIcon = 30;
         </svg>
       </a>
     </div>
+    <div class="copyright">&copy; By {data.name} - {currentYear}.</div>
   </div>
 </>
 
@@ -89,17 +92,20 @@ const sizeIcon = 30;
     transition: all 0.3s ease-in-out;
   }
 
-  @media screen and (max-width: 768px) {
+  .copyright {
+    text-align: center;
+    font-size: calc(0.2rem + 1vw);
+  }
+
+  @media screen and (max-width: 992px) {
     .container-contact {
       display: flex;
       flex-direction: column;
       justify-content: end;
       align-items: center;
       width: 100vw;
-
       position: absolute;
       bottom: 0;
-      background: linear-gradient(0deg, #001821f5 70%, #0018216d);
     }
   }
 </style>

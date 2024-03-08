@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+const pageData = {
+  title: "Navega en el",
+  subTitle: "Menu",
+};
+const allPage = {
+  Home: "/",
+  "Sobre Mi": "/about",
+  Proyectos: "/proyectos",
+  Contacto: "/contact",
+};
+---
+
+<Layout pageData={pageData}>
+  <div class="container-fluid">
+    <nav>
+      <ul class="container-lista-menu">
+        {
+          Object.entries(allPage).map(([key, value]) => (
+            <li>
+              <a href={value}>{key}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</Layout>
+<style>
+  .container-lista-menu {
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+    padding: 0;
+    list-style: none;
+  }
+  .container-lista-menu a {
+    font-size: 3rem;
+    color: white;
+    text-decoration: none;
+  }
+  .container-lista-menu li:hover {
+    text-decoration: underline;
+    transform: scale(1.2);
+    padding-left: 20px;
+    transition: all 1s ease;
+  }
+</style>
