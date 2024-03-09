@@ -2,7 +2,7 @@
 import { slide } from "astro:transitions";
 import Layout from "../layouts/Layout.astro";
 const pageData = {
-  title: "Navega en el",
+  title: "",
   subTitle: "Menu",
 };
 const allPage = {
@@ -16,10 +16,7 @@ const allPage = {
 <Layout pageData={pageData}>
   <div class="container-fluid">
     <nav>
-      <ul
-        class="container-lista-menu"
-        
-      >
+      <ul class="container-lista-menu">
         {
           Object.entries(allPage).map(([key, value]) => (
             <li>
@@ -35,19 +32,29 @@ const allPage = {
   .container-lista-menu {
     width: 100%;
     height: 100%;
-    margin: 0%;
     padding: 0;
     list-style: none;
   }
   .container-lista-menu a {
-    font-size: 3rem;
+    position: relative;
+    display: inline-block;
+    font-size: calc(2rem);
     color: white;
+    text-decoration-color: var(--colorOne);
     text-decoration: none;
+    transition: all 0.3s ease-in-out;
   }
-  .container-lista-menu li:hover {
-    text-decoration: underline;
-    transform: scale(1.2);
-    padding-left: 20px;
-    transition: all 1s ease;
+  .container-lista-menu a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: calc(200px + 5vw);
+    height: 5px;
+    background: linear-gradient(to right, var(--colorOne), transparent);
+  }
+  .container-lista-menu a:hover {
+    transform: translate(20px);
   }
 </style>

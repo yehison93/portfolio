@@ -2,33 +2,30 @@
 const marginLine = Astro.props;
 ---
 
-<div class="container-frames">
-  <div class="frames">
-    <div class="line horizontal"></div>
+<div class="container-frames-underline">
+  <div class="frames-underline">
+    <div class="line-underline horizontal-underline"></div>
   </div>
 </div>
 
 <style define:vars={marginLine}>
   :root {
-    --large-horizontal-line-frame: 50vw;
-    --large-vertical-line-frame: 80vh;
-    --weight-line-frame: 7px;
+    --large-horizontal-line-frame-underline: 50vw;
+    --large-vertical-line-frame-underline: 80vh;
+    --weight-line-frame-underline: 7px;
   }
-  .container-frames {
-    position: absolute;
+  .container-frames-underline {
+    position: relative;
     top: var(--marginLine);
   }
-  .frame {
-    position: relative;
-  }
-  .line {
+  .line-underline {
     position: absolute;
     width: var(--weight-line-frame);
-    background: linear-gradient(var(--colorOne) 50%, transparent),
+    background: linear-gradient(var(--colorOne), transparent),
       linear-gradient(white, transparent 80%);
   }
 
-  .frames .horizontal {
+  .frames-underline .horizontal-underline {
     height: var(--large-horizontal-line-frame);
     top: calc(
       (var(--large-horizontal-line-frame) / -2) + (var(--weight-line-frame) / 2)
@@ -44,9 +41,4 @@ const marginLine = Astro.props;
       --large-horizontal-line-frame: 70vw;
       --weight-line-frame: 5px;
     }
-    .container-frames {
-      position: absolute;
-      top: calc(80px + 5vw);
-    }
-  }
 </style>

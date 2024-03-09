@@ -23,7 +23,7 @@
 
 body{
   width: 100vw;
-  height: 100vh;
+  max-height: 100vh;
   background-color: var(--colorFour);
   overflow: hidden;
   background-color: var(--colorFour);
@@ -31,4 +31,27 @@ body{
 
 h1{
   font-family: var(--fontTitle), 'Arial Narrow Bold', sans-serif
+}
+
+.container-footer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  bottom: 0;
+  width: 100vw;
+  min-height: 10vh;
+  background: linear-gradient(0deg, #001821f1 30%, #0018216d);
+}
+
+.copyright {
+  text-align: center;
+  font-size: calc(1px + 1vw);
+}
+
+@media screen and (max-width: 992px) {
+
+  .copyright {
+    font-size: calc(5px + 2vw);
+  }
 }

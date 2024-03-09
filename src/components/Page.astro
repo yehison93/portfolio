@@ -12,8 +12,9 @@ const { pageData } = Astro.props;
     >
       <h2 class="container-title display-5">{pageData.title}</h2>
       <h1 class="container-subtitle display-2">{pageData.subTitle}</h1>
+      <Underline />
     </div>
-    <Underline marginLine="150px" />
+
     <div
       class="container-main"
       transition:animate={slide({
@@ -21,8 +22,9 @@ const { pageData } = Astro.props;
       })}
     >
       <div>
+        <div class="empty-space-top"></div>
         <slot />
-        <div class="empty-space"></div>
+        <div class="empty-space-bottom"></div>
       </div>
     </div>
   </main>
@@ -30,6 +32,19 @@ const { pageData } = Astro.props;
 <style>
   .container-page {
     position: relative;
+  }
+  .container-titles {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container-titles h1,
+  .container-titles h2 {
+    line-height: 1;
+    margin: 0;
+    padding: 0;
   }
 
   .container-main {
@@ -47,13 +62,20 @@ const { pageData } = Astro.props;
     display: none;
   }
 
-  .empty-space {
-    height: 150px;
+  .empty-space-bottom {
+    height: 100px;
+  }
+
+  .empty-space-top {
+    height: 30px;
   }
 
   @media screen and (max-width: 992px) {
     .container-main {
-      height: calc(70vh - 120px);
+      height: calc(70vh - 40px);
+    }
+    .empty-space-bottom {
+      height: calc(100px - 1vh);
     }
   }
 </style>
