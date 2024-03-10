@@ -10,8 +10,8 @@ const { pageData } = Astro.props;
       class="container-titles"
       transition:animate={slide({ duration: "1s" })}
     >
-      <h2 class="container-title display-5">{pageData.title}</h2>
-      <h1 class="container-subtitle display-2">{pageData.subTitle}</h1>
+      <h2 class="container-title display-6">{pageData.title}</h2>
+      <h1 class="container-subtitle display-4">{pageData.subTitle}</h1>
       <Underline />
     </div>
 
@@ -30,16 +30,6 @@ const { pageData } = Astro.props;
   </main>
 </>
 <style>
-  .container-page {
-    position: relative;
-  }
-  .container-titles {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-  }
-
   .container-titles h1,
   .container-titles h2 {
     line-height: 1;
@@ -53,6 +43,7 @@ const { pageData } = Astro.props;
     text-align: justify;
     hyphens: auto;
     height: calc(100vh - 200px);
+    margin-top: 7px;
     overflow: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;

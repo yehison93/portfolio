@@ -13,7 +13,7 @@ const { pageData } = Astro.props;
         <Avatar />
         <Contact />
       </div>
-      <div class="col-xs-12 col-lg-7 container-main">
+      <div class="col-xs-12 col-lg-7 container-main-body">
         <Page pageData={pageData}><slot /></Page>
       </div>
     </div>
@@ -21,16 +21,16 @@ const { pageData } = Astro.props;
 </>
 
 <style>
+  .container-body {
+    min-height: 100vh;
+  }
   .contaniner-contact-body {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    height: 70vh;
-  }
-
-  .contaniner-contact-body {
-    margin: 0;
+    height: 80vh;
+    gap: 50px;
     padding-right: 30px;
   }
 

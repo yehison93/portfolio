@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import localLogoImage from "../assets/image/logoYehison.png";
+import { List } from "react-bootstrap-icons";
 ---
 
 <header class="container-fluid bg-body-trasnparent container-header">
@@ -16,17 +17,7 @@ import localLogoImage from "../assets/image/logoYehison.png";
     </div>
     <div class="col container-icon-header">
       <a href="/menu" class="navbar-toggler button-header" type="button">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          class="bi bi-list"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
-          ></path>
-        </svg>
+        <List color="white" className="icon-header" />
       </a>
     </div>
   </div>
@@ -50,8 +41,13 @@ import localLogoImage from "../assets/image/logoYehison.png";
     width: calc(80px + 3vw);
     height: auto;
   }
-  .button-header {
-    color: aliceblue;
-    width: calc(2rem + 2vw);
+  .icon-header {
+    fill: white;
+    font-size: calc(1rem + 4vw);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .icon-header:hover {
+    transform: scale(1.2);
   }
 </style>
