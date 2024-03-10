@@ -1,5 +1,5 @@
 ---
-import { fade, slide } from "astro:transitions";
+import { slide } from "astro:transitions";
 import Underline from "./Underline.astro";
 const { pageData } = Astro.props;
 ---
@@ -10,11 +10,12 @@ const { pageData } = Astro.props;
       class="container-titles"
       transition:animate={slide({ duration: "1s" })}
     >
-      <h2 class="container-title display-6">{pageData.title}</h2>
+      <h2 class="container-title display-6">
+        {pageData.title || <br />}
+      </h2>
       <h1 class="container-subtitle display-4">{pageData.subTitle}</h1>
-      <Underline />
     </div>
-
+    <Underline />
     <div
       class="container-main"
       transition:animate={slide({
@@ -38,10 +39,6 @@ const { pageData } = Astro.props;
   }
 
   .container-main {
-    display: flex;
-    align-content: center;
-    text-align: justify;
-    hyphens: auto;
     height: calc(100vh - 200px);
     margin-top: 7px;
     overflow: scroll;

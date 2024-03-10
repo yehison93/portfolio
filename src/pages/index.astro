@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import resources from "../resources/resources.json";
+const data = resources.info;
 const pageData = {
   title: "Desarrollador",
   subTitle: "Front-End",
@@ -8,20 +10,16 @@ const pageData = {
 
 <Layout pageData={pageData}>
   <>
-    <p class="fs-4">
-      Yehison Como estudiante de Ingeniería en Informática en el 7º semestre, he
-      estado inmerso en el emocionante mundo de la programación durante
-      aproximadamente un año. Mi pasión se centra en el desarrollo de
-      experiencias de usuario y la creación de interfaz de usuario atractivas y
-      funcionales. Como estudiante de Ingeniería en Informática en el 7º
-      semestre, he estado inmerso en el emocionante mundo de la programación
-      durante aproximadamente un año. Mi pasión se centra en el desarrollo de
-      experiencias de usuario y la creación de interfaz de usuario atractivas y
-      funcionales. Como estudiante de Ingeniería en Informática en el 7º
-      semestre, he estado inmerso en el emocionante mundo de la programación
-      durante aproximadamente un año. Mi pasión se centra en el desarrollo de
-      experiencias de usuario y la creación de interfaz de usuario atractivas y
-      funcionales. Yehison
+    <p class="text-main">
+      {
+        `¡Hola! Soy ${data.avatar.name.split(" ")[0]}, un entusiasta del desarrollo Front-end que
+      adora sumergirse en códigos y crear experiencias de usuario que encantan y facilitan la vida. Como estudiante de ingeniería en informática y con certificaciones en diseño web y desarrollo front-end, cada proyecto es una aventura donde aplico mi conocimiento y creatividad.`
+      }
+    </p>
+    <p class="text-main">
+      {
+        `Mi pasion por lo que hago hace que cada reto sea una oportunidad para aprender algo nuevo y marcar la diferencia.`
+      }
     </p>
   </>
 </Layout>
