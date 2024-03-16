@@ -1,6 +1,7 @@
 ---
 import { slide } from "astro:transitions";
 import Layout from "../../layouts/Layout.astro";
+import Navigations from "../../components/Navigations.astro";
 const pageData = {
   title: "Menu",
   subTitle: "Proyectos",
@@ -16,47 +17,5 @@ const allProjets = {
 ---
 
 <Layout pageData={pageData}>
-  <div class="container-fluid">
-    <nav>
-      <ul class="container-lista-menu">
-        {
-          Object.entries(allProjets).map(([key, value]) => (
-            <li>
-              <a href={value}>{key}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
-  </div>
+  <Navigations allPage={allProjets} />
 </Layout>
-<style>
-  .container-lista-menu {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    list-style: none;
-  }
-  .container-lista-menu a {
-    position: relative;
-    display: inline-block;
-    font-size: calc(2rem);
-    color: white;
-    text-decoration-color: var(--colorOne);
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-  }
-  .container-lista-menu a:hover::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: calc(200px + 5vw);
-    height: 5px;
-    background: linear-gradient(to right, var(--colorOne), transparent);
-  }
-  .container-lista-menu a:hover {
-    transform: translate(20px);
-  }
-</style>

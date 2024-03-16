@@ -1,0 +1,48 @@
+---
+const { allPage } = Astro.props;
+---
+
+<div class="container-fluid">
+  <nav>
+    <ul class="container-lista-menu">
+      {
+        Object.entries(allPage).map(([key, value]) => (
+          <li>
+            <a href={value}>{key}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</div>
+
+<style>
+  .container-lista-menu {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    list-style: none;
+  }
+  .container-lista-menu a {
+    position: relative;
+    display: inline-block;
+    font-size: calc(1rem + 1vw);
+    color: white;
+    text-decoration-color: var(--colorOne);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+  .container-lista-menu a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: calc(200px + 5vw);
+    height: 5px;
+    background: linear-gradient(to right, var(--colorOne), transparent);
+  }
+  .container-lista-menu a:hover {
+    transform: translate(20px);
+  }
+</style>
