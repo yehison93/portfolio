@@ -4,7 +4,7 @@ const { allPage } = Astro.props;
 
 <div class="container-fluid">
   <nav>
-    <ul class="container-lista-menu">
+    <ul class="vstack gap-2 container-lista-menu">
       {
         Object.entries(allPage).map(([key, value]) => (
           <li>
@@ -21,7 +21,7 @@ const { allPage } = Astro.props;
     width: 100%;
     height: 100%;
     padding: 0;
-    list-style: none;
+    list-style: circle inside;
   }
   .container-lista-menu a {
     position: relative;
