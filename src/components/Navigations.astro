@@ -8,7 +8,7 @@ const { allPage } = Astro.props;
       {
         Object.entries(allPage).map(([key, value]) => (
           <li>
-            <a href={value}>{key}</a>
+            <a href={`${value}`}>{key}</a>
           </li>
         ))
       }
@@ -40,9 +40,20 @@ const { allPage } = Astro.props;
     bottom: 0;
     width: calc(200px + 5vw);
     height: 5px;
-    background: linear-gradient(to right, var(--colorOne), transparent);
+    background: linear-gradient(
+      to right,
+      var(--colorOne),
+      var(--colorTwo),
+      var(--colorThree),
+      transparent
+    );
   }
   .container-lista-menu a:hover {
     transform: translate(20px);
+  }
+  @media screen and (max-width: 1200px) {
+    .container-lista-menu a {
+      font-size: calc(1rem + 3vw);
+    }
   }
 </style>

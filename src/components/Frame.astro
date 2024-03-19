@@ -25,8 +25,12 @@
   .line {
     position: absolute;
     width: var(--weight-line-frame);
-    background: linear-gradient(var(--colorOne) 50%, transparent),
-      linear-gradient(white, transparent 80%);
+    background: linear-gradient(
+      var(--colorOne),
+      var(--colorTwo),
+      var(--colorThree),
+      var(--colorFour)
+    );
   }
 
   .frames .horizontal {
@@ -45,7 +49,7 @@
     left: 0;
   }
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1200px) {
     :root {
       --large-horizontal-line-frame: 90vw;
       --margin-line-frame: 20px;

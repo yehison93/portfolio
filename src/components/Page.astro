@@ -55,15 +55,19 @@ const { pageData } = Astro.props;
   }
 
   .empty-space-top {
-    height: 30px;
+    height: 50px;
   }
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1200px) {
     .container-main {
+      min-width: 350px;
       height: calc(70vh - 40px);
     }
     .empty-space-bottom {
-      height: calc(100px - 1vh);
+      height: calc(150px - 5vw);
+    }
+    .empty-space-top {
+      height: calc(10px + 5vw);
     }
   }
 </style>

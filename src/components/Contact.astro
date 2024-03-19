@@ -61,7 +61,13 @@ const data = resources.info.avatar;
     bottom: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(to right, var(--colorOne), transparent);
+    background: linear-gradient(
+      to right,
+      var(--colorOne),
+      var(--colorTwo),
+      var(--colorThree),
+      transparent
+    );
   }
 
   .container-email:hover {
@@ -84,7 +90,7 @@ const data = resources.info.avatar;
     display: none;
   }
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1200px) {
     .container-contact {
       display: flex;
       flex-direction: column;

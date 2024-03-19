@@ -19,8 +19,12 @@
   .line-underline {
     position: absolute;
     width: var(--weight-line-frame-underline);
-    background: linear-gradient(var(--colorOne), transparent),
-      linear-gradient(white, transparent 80%);
+    background: linear-gradient(
+      var(--colorOne) 12.5%,
+      var(--colorTwo),
+      var(--colorThree),
+      var(--colorFour)
+    );
     height: var(--large-horizontal-line-frame-underline);
     top: calc(var(--large-horizontal-line-frame-underline) / -2);
     left: calc(
@@ -30,7 +34,7 @@
     transform: rotate(-90deg);
   }
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1200px) {
     :root {
       --large-horizontal-line-frame-underline: 75vw;
       --weight-line-frame-underline: 5px;

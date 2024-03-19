@@ -9,6 +9,13 @@ const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
 import resources from "../resources/resources.json";
 const data = resources.info.avatar;
+import customColor from "../functions/customColor.js";
+
+const colors = customColor();
+
+const colorOne = colors.colorOne;
+const colorTwo = colors.colorTwo;
+const colorThree = colors.colorThree;
 ---
 
 <!doctype html>
@@ -24,12 +31,20 @@ const data = resources.info.avatar;
     <ViewTransitions />
   </head>
   <body>
-    <Frame />
-    <Main pageData={pageData}>
+    <Frame colors={colors} />
+    <Main pageData={pageData} colors={colors}>
       <slot />
     </Main>
     <footer class="container-footer">
       <div class="copyright">&copy; By {data.name} - {currentYear}</div>
     </footer>
+    <style is:global define:vars={{ colorOne, colorTwo, colorThree }}>
+      :root {
+        --colorOne: var(--colorone);
+        --colorTwo: var(--colorTwo);
+        --colorThree: var(--colorThree);
+        --colorFour: #001020;
+      }
+    </style>
   </body>
 </html>

@@ -2,10 +2,6 @@
 
 
 :root{
-  --colorOne: #00faf8;
-  --colorTwo: #2f82f5;
-  --colorThree: #005cfa;
-  --colorFour: #001020;
   --fontTitle: anta;
   --fontText: cascadia code;
 }
@@ -36,9 +32,9 @@ h1{
 }
 .text-main{
   font-size: 1.3rem;
-  text-align: justify;
   font-weight: 300;
   hyphens: auto;
+  text-align: justify;
   
 }
 
@@ -57,4 +53,10 @@ h1{
 .copyright {
   text-align: center;
   font-size: calc(0.5rem + 0.5vw);
+}
+
+@media screen and (max-width: 768px) and (min-height: 768px) {
+  .text-main{
+    text-align: start;
+  }
 }

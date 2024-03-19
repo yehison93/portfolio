@@ -9,11 +9,11 @@ const { pageData } = Astro.props;
 <>
   <div class="container container-body">
     <div class="row">
-      <div class="col-xs-12 col-lg-5 contaniner-contact-body">
+      <div class="col-xs-12 col-xl-5 contaniner-contact-body">
         <Avatar />
         <Contact />
       </div>
-      <div class="col-xs-12 col-lg-7 container-main-body">
+      <div class="col-xs-12 col-xl-7 container-main-body">
         <Page pageData={pageData}><slot /></Page>
       </div>
     </div>
@@ -31,7 +31,7 @@ const { pageData } = Astro.props;
     padding-right: 30px;
   }
 
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1200px) {
     .contaniner-contact-body {
       height: 20vh;
     }

@@ -5,10 +5,10 @@ const dates = resorces.info.avatar;
 
 <div class="container container-name-contact">
   <>
-    <h1 class="container-firts-name display-1 color-transition">
+    <h1 class="container-firts-name color-transition">
       {dates.name.split(" ")[0]}
     </h1>
-    <h1 class="container-last-name display-1 color-transition">
+    <h1 class="container-last-name color-transition">
       {dates.name.split(" ")[1]}
     </h1>
   </>
@@ -22,17 +22,19 @@ const dates = resorces.info.avatar;
   }
 
   .container-firts-name {
+    font-size: calc(1rem + 5vw);
     text-align: start;
     line-height: 1;
     padding: 0;
   }
   .container-last-name {
+    font-size: calc(1rem + 5vw);
     text-align: end;
     line-height: 1;
     padding: 0;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1200px) {
     .container-name-contact {
       max-width: 300px;
     }
