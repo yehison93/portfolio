@@ -5,15 +5,11 @@ import Main from "../components/Main.astro";
 import "../styles/globalStyles.css";
 import { ViewTransitions, fade } from "astro:transitions";
 import resources from "../resources/resources.json";
-import customColor from "../functions/customColor.js";
+import Colors from "../components/Colors.jsx";
 const { pageData } = Astro.props;
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
 const data = resources.info.avatar;
-const colors = customColor();
-const colorOne = colors.colorOne;
-const colorTwo = colors.colorTwo;
-const colorThree = colors.colorThree;
 ---
 
 <!doctype html>
@@ -29,20 +25,13 @@ const colorThree = colors.colorThree;
     <ViewTransitions />
   </head>
   <body>
-    <Frame colors={colors} />
-    <Main pageData={pageData} colors={colors}>
+    <Frame />
+    <Main pageData={pageData}>
       <slot />
     </Main>
     <footer class="container-footer">
       <div class="copyright">&copy; By {data.name} - {currentYear}</div>
     </footer>
-    <style define:vars={{ colorOne, colorTwo, colorThree }}>
-      :root {
-        --colorOne: var(--colorone);
-        --colorTwo: var(--colorTwo);
-        --colorThree: var(--colorThree);
-        --colorFour: #001020;
-      }
-    </style>
+    <Colors />
   </body>
 </html>
