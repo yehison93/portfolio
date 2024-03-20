@@ -22,12 +22,10 @@
 }
 
 body, html{
+  cursor: url(/public/cursor-32x32.svg), auto;
   max-width: 100vw;
   max-height: 100vh;
   background-color: var(--colorFour);
-}
-body,
-html {
   overflow: hidden;
 }
 
