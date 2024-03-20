@@ -16,9 +16,12 @@ const data = resources.info.avatar;
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta
+      name="description"
+      content=`Portafolio de ${data.name}, un desarrollador front-end con experiencia en HTML, CSS, JavaScript, React, Astro, entre otras. Descubre mis proyectos web y mas sobre mi aqui.`
+    />
+    <link rel="icon" type="image/png" href="/public/faviconYehison.png" />
     <meta name="generator" content={Astro.generator} />
     <meta name="author" content={data.name} />
     <title>{`${pageData.title} ${pageData.subTitle}`.trim()}</title>
@@ -32,6 +35,6 @@ const data = resources.info.avatar;
     <footer class="container-footer">
       <div class="copyright">&copy; By {data.name} - {currentYear}</div>
     </footer>
-    <Colors client:idle />
+    <Colors client:load />
   </body>
 </html>
