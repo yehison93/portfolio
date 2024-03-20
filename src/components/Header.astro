@@ -1,5 +1,5 @@
 ---
-// import { Image } from "astro:assets";
+import { Image } from "astro:assets";
 import localLogoImage from "../assets/image/logo_Yehison.png";
 import { List } from "react-bootstrap-icons";
 ---
@@ -8,11 +8,7 @@ import { List } from "react-bootstrap-icons";
   <div class="row">
     <div class="col container-logo-header">
       <a href="/">
-        <img
-          src={localLogoImage.src}
-          alt="Logo de Yehison"
-          class="image-logo"
-        />
+        <Image src={localLogoImage} alt="Logo de Yehison" class="image-logo" />
       </a>
     </div>
     <div class="col container-icon-header">
