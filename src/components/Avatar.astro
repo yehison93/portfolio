@@ -3,15 +3,13 @@ import resorces from "../resources/resources.json";
 const dates = resorces.info.avatar;
 ---
 
-<div class="container container-name-contact">
-  <>
-    <h1 class="container-firts-name color-transition">
-      {dates.name.split(" ")[0]}
-    </h1>
-    <h1 class="container-last-name color-transition">
-      {dates.name.split(" ")[1]}
-    </h1>
-  </>
+<div onclick="" class="container container-name-contact color-transition">
+  <h1 class="container-firts-name">
+    {dates.name.split(" ")[0]}
+  </h1>
+  <h1 class="container-last-name">
+    {dates.name.split(" ")[1]}
+  </h1>
 </div>
 
 <style>
@@ -22,16 +20,42 @@ const dates = resorces.info.avatar;
   }
 
   .container-firts-name {
+    cursor: none;
     font-size: calc(1rem + 5vw);
     text-align: start;
     line-height: 1;
     padding: 0;
   }
   .container-last-name {
+    cursor: none;
     font-size: calc(1rem + 5vw);
     text-align: end;
     line-height: 1;
     padding: 0;
+  }
+
+  .color-transition {
+    color: white;
+    background: linear-gradient(
+      to right,
+      var(--colorOne),
+      var(--colorTwo),
+      var(--blueFour)
+    );
+    -webkit-background-clip: text;
+    transition: color 5s ease-in-out;
+  }
+
+  .color-transition:hover {
+    color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(
+      to right,
+      var(--colorOne),
+      var(--colorTwo),
+      var(--blueFour)
+    );
+    -webkit-background-clip: text;
+    transition: color 1s ease-in-out;
   }
 
   @media screen and (max-width: 1200px) {

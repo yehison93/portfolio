@@ -23,6 +23,7 @@ const data = resources.info.avatar;
     <meta name="author" content={data.name} />
     <title>{`${pageData.title} ${pageData.subTitle}`.trim()}</title>
     <ViewTransitions />
+    <Colors client:idle />
   </head>
   <body>
     <Frame />
@@ -32,6 +33,5 @@ const data = resources.info.avatar;
     <footer class="container-footer">
       <div class="copyright">&copy; By {data.name} - {currentYear}</div>
     </footer>
-    <Colors client:idle />
   </body>
 </html>

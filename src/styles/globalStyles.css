@@ -2,6 +2,10 @@
 
 
 :root{
+  --blueOne: #00faf8;
+  --blueTwo: #2f82f5;
+  --blueThree: #005cfa;
+  --blueFour: #001020;
   --fontTitle: anta;
   --fontText: cascadia code;
 }
