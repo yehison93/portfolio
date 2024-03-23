@@ -1,24 +1,28 @@
 ---
+import Navigations from "../components/Navigations.astro";
 import Layout from "../layouts/Layout.astro";
 import resources from "../resources/resources.json";
 const data = resources.info;
 const pageData = {
   title: "Desarrollador",
   subTitle: "Front-End",
+  description: `Portafolio de ${resources.info.avatar.name}, un desarrollador front-end con experiencia en HTML, CSS, JavaScript, React, Astro, entre otras. Descubre mis proyectos web y mas sobre mi aquí.`,
 };
 ---
 
 <Layout pageData={pageData}>
-  <>
+  <div>
     <p class="text-main">
       {
-        `¡Hola! Soy ${data.avatar.name.split(" ")[0]}, un desarrollador front-end apasionado por crear interfaces web atractivas y funcionales. Tengo 6 meses de experiencia trabajando con tecnologías como HTML, CSS, JavaScript, React y Astro.`
+        `Desarrollador front-end apasionado por crear interfaces web atractivas y funcionales. Experiencia en tecnologías como:`
       }
     </p>
-    <p class="text-main">
-      {
-        `Mi pasion por lo que hago hace que cada reto sea una oportunidad para aprender algo nuevo y marcar la diferencia.`
-      }
-    </p>
-  </>
+    <div class="hstack mb-2">
+      <h3 class="badge container-badges">HTML</h3>
+      <h3 class="badge container-badges">CSS</h3>
+      <h3 class="badge container-badges">JavaScript</h3>
+      <h3 class="badge container-badges">React</h3>
+      <h3 class="badge container-badges">Astro</h3>
+    </div>
+  </div>
 </Layout>

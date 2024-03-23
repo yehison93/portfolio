@@ -14,7 +14,7 @@ const dates = resorces.info.avatar;
 
 <style>
   .container-name-contact {
-    max-width: 450px;
+    max-width: calc(400px + 10vw);
     justify-content: center;
     margin: 0;
   }
@@ -57,10 +57,14 @@ const dates = resorces.info.avatar;
     -webkit-background-clip: text;
     transition: color 1s ease-in-out;
   }
-
   @media screen and (max-width: 1200px) {
     .container-name-contact {
-      max-width: 300px;
+      max-width: calc(300px + 10vw);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .container-name-contact {
+      max-width: calc(150px + 20vw);
     }
     .container-firts-name {
       margin: -5px 0;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-const color = ["#00faf8", "#2f82f5", "#005cfa"];
+const color = ["#00faf8", "#00faf8", "#2f82f5", "#005cfa", "#005cfa"];
 function getRandomInt() {
   const min = Math.ceil(0);
   const max = Math.floor(color.length);
@@ -8,7 +8,6 @@ function getRandomInt() {
 
 const Colors = () => {
   const [colors, setColors] = useState({});
-
   useEffect(() => {
     setColors({
       colorOne: color[getRandomInt()],

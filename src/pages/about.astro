@@ -1,27 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import avatarImage from "../assets/image/avatarYehison.png";
 const pageData = {
   title: "Quien es",
   subTitle: "Yehison",
+  description: "",
 };
 ---
 
 <Layout pageData={pageData}>
-  <>
-    <p class="fs-4 text-about text-main">
-      Yehison Como estudiante de Ingeniería en Informática en el 7º semestre, he
-      estado inmerso en el emocionante mundo de la programación durante
-      aproximadamente un año. Mi pasión se centra en el desarrollo de
-      experiencias de usuario y la creación de interfaz de usuario atractivas y
-      funcionales. Como estudiante de Ingeniería en Informática en el 7º
-      semestre, he estado inmerso en el emocionante mundo de la programación
-      durante aproximadamente un año. Mi pasión se centra en el desarrollo de
-      experiencias de usuario y la creación de interfaz de usuario atractivas y
-      funcionales. Como estudiante de Ingeniería en Informática en el 7º
-      semestre, he estado inmerso en el emocionante mundo de la programación
-      durante aproximadamente un año. Mi pasión se centra en el desarrollo de
-      experiencias de usuario y la creación de interfaz de usuario atractivas y
-      funcionales. Yehison
+  <div class="container-about text-main">
+    <p>
+      Hace menos un año decidí sumergirme en el mundo de los códigos, esto
+      motivado a mi interés en la programación y mi carrera de ingeniería en
+      informática. En el camino me conseguí con la plataforma de aprendizaje
+      online FreeCodeCamp, sitio en el cual he obtenido varias certificaciones
+      que me han ayudado en mi formación como desarrollador.
     </p>
-  </>
+    <p>
+      Me entusiasma crear interfaces atractivas y fáciles de usar que brinden
+      una experiencia excepcional al usuario. Tengo un fuerte enfoque en la
+      accesibilidad, la capacidad de respuesta y el rendimiento.
+    </p>
+    <h1></h1>
+  </div>
 </Layout>
+<style>
+  .container-about p {
+    font-size: var(--fs-1);
+  }
+</style>
