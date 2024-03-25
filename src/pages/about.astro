@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import avatarImage from "../assets/image/avatarYehison.png";
+import certificadoUno from "../assets/image/certificado_01.png";
+import { ChevronLeft, ChevronRight } from "react-bootstrap-icons";
 const pageData = {
   title: "Quien es",
   subTitle: "Yehison",
@@ -12,12 +13,47 @@ const pageData = {
 <Layout pageData={pageData}>
   <div class="container-about text-main">
     <p>
-      Hace menos un año decidí sumergirme en el mundo de los códigos, esto
+      Hace menos de un año decidí sumergirme en el mundo de los códigos, esto
       motivado a mi interés en la programación y mi carrera de ingeniería en
       informática. En el camino me conseguí con la plataforma de aprendizaje
       online FreeCodeCamp, sitio en el cual he obtenido varias certificaciones
       que me han ayudado en mi formación como desarrollador.
     </p>
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <Image src={certificadoUno} class="image-certifications" alt="..." />
+        </div>
+        <div class="carousel-item active">
+          <Image src={certificadoUno} class="image-certifications" alt="..." />
+        </div>
+        <div class="carousel-item active">
+          <Image src={certificadoUno} class="image-certifications" alt="..." />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="prev"
+      >
+        <ChevronLeft
+          aria-hidden="true"
+          className=" icon-control-carousel display-5"
+        />
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExample"
+        data-bs-slide="next"
+      >
+        <ChevronRight
+          aria-hidden="true"
+          className=" icon-control-carousel display-5"
+        />
+      </button>
+    </div>
     <p>
       Me entusiasma crear interfaces atractivas y fáciles de usar que brinden
       una experiencia excepcional al usuario. Tengo un fuerte enfoque en la
@@ -29,5 +65,15 @@ const pageData = {
 <style>
   .container-about p {
     font-size: var(--fs-1);
+  }
+  .image-certifications {
+    display: block;
+    width: 50%;
+    height: auto;
+    margin: auto;
+    cursor: pointer;
+  }
+  .icon-control-carousel {
+    fill: var(--colorOne);
   }
 </style>

@@ -13,16 +13,16 @@ const pageData = {
 <Layout pageData={pageData}>
   <div>
     <p class="text-main">
-      {
-        `Desarrollador front-end apasionado por crear interfaces web atractivas y funcionales. Experiencia en tecnologías como:`
-      }
+      Desarrollador front-end apasionado por crear interfaces web atractivas y
+      funcionales.
     </p>
-    <div class="hstack mb-2">
-      <h3 class="badge container-badges">HTML</h3>
-      <h3 class="badge container-badges">CSS</h3>
-      <h3 class="badge container-badges">JavaScript</h3>
-      <h3 class="badge container-badges">React</h3>
-      <h3 class="badge container-badges">Astro</h3>
+    <p class="text-main">Experiencia en tecnologías como:</p>
+    <div class="hstack my-5">
+      {
+        ["HTML", "CSS", "JavaScript", "React"].map((item) => (
+          <h3 class="badge container-badges">{item}</h3>
+        ))
+      }
     </div>
   </div>
 </Layout>
