@@ -5,7 +5,7 @@ const { pageData } = Astro.props;
 ---
 
 <>
-  <main class="container-fluid container-page">
+  <main class="container container-page">
     <div
       class="container-titles"
       transition:animate={slide({ duration: "1s" })}
@@ -39,6 +39,7 @@ const { pageData } = Astro.props;
   }
 
   .container-main {
+    width: 90%;
     height: calc(100vh - 200px);
     margin-top: 7px;
     overflow: scroll;

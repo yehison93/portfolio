@@ -33,7 +33,7 @@ h1{
   font-family: var(--fontTitle), 'Arial Narrow Bold', sans-serif
 }
 .text-main{
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 300;
   hyphens: auto;
   text-align: justify;
@@ -55,12 +55,6 @@ h1{
 .copyright {
   text-align: center;
   font-size: calc(0.5rem + 0.5vw);
-}
-.container-badges{
-  font-size: calc(0.5rem + 1vw);
-  color: var(--blueFour);
-  background-color: var(--colorOne);
-  margin: auto;
 }
 
 @media screen and (max-width: 768px) and (min-height: 768px) {

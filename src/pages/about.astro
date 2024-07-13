@@ -1,10 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import certificadoUno from "../assets/image/certificado_01.png";
+import fotoYehison from "../assets/image/fotoYehison.png";
+import certificadoUno from "../assets/image/certificado01.jpg";
+import certificadoDos from "../assets/image/certificado02.png";
+import certificadoTres from "../assets/image/certificado03.png";
+
 import { ChevronLeft, ChevronRight } from "react-bootstrap-icons";
 const pageData = {
-  title: "Quien es",
+  title: "Quién es",
   subTitle: "Yehison",
   description: "",
 };
@@ -13,67 +17,116 @@ const pageData = {
 <Layout pageData={pageData}>
   <div class="container-about text-main">
     <p>
-      Hace menos de un año decidí sumergirme en el mundo de los códigos, esto
-      motivado a mi interés en la programación y mi carrera de ingeniería en
-      informática. En el camino me conseguí con la plataforma de aprendizaje
-      online FreeCodeCamp, sitio en el cual he obtenido varias certificaciones
-      que me han ayudado en mi formación como desarrollador.
+      Hola, ya saben mi nombre <strong>(esta por todas partes)</strong>. Soy una persona de Venezuela con mucho ánimo por crecer a nivel personal y profesional. Nací en Caracas en el año 1993. Amante de la familia, el trabajo y el café. Las personas que me conocen, dicen que soy una buena persona, y los compañeros de trabajo que he tenido en su mayoría tienen buena opinión de mí y el comentario frecuente es que soy apasionado y detallista.
     </p>
-    <div id="carouselExample" class="carousel slide">
+    <div class="text-center"> 
+      <Image 
+        src={fotoYehison}
+        alt="foto Yehison"
+        class="foto-avatar text-center"
+        width={300}
+      />
+    </div>
+   
+    <p>
+      Hace menos de un año decidí sumergirme en el mundo del código, esto motivado por mi interés en la programación y mi carrera de ingeniería en informática. 
+    </p>
+    <p>
+      En este camino, me encontré con varias plataformas de aprendizaje online, entre ellas FreeCodeCamp, sitio en el cual he obtenido varias certificaciones que me han ayudado en mi formación como desarrollador.
+    </p>
+    <div id="carouselCertifications" class="carousel slide my-5 mx-auto"> 
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <Image src={certificadoUno} class="image-certifications" alt="..." />
+          <a
+            href="https://www.freecodecamp.org/certification/fccb0679624-8087-4d66-b138-180b4f65df07/responsive-web-design"
+            target="_blank"
+          >
+            <Image
+              src={certificadoUno}
+              class="image-certifications"
+              alt="Certificado de Responsive Web Design"
+            />
+          </a>
         </div>
-        <div class="carousel-item active">
-          <Image src={certificadoUno} class="image-certifications" alt="..." />
+        <div class="carousel-item">
+          <a
+            href="https://www.freecodecamp.org/certification/fccb0679624-8087-4d66-b138-180b4f65df07/front-end-development-libraries"
+            target="_blank"
+          >
+            <Image
+              src={certificadoDos}
+              class="image-certifications"
+              alt="Certificado de Front-end Development Libraries"
+            />
+          </a>
         </div>
-        <div class="carousel-item active">
-          <Image src={certificadoUno} class="image-certifications" alt="..." />
+        <div class="carousel-item">
+          <a
+            href="https://www.freecodecamp.org/certification/fccb0679624-8087-4d66-b138-180b4f65df07/javascript-algorithms-and-data-structures"
+            target="_blank"
+          >
+            <Image
+              src={certificadoTres}
+              class="image-certifications"
+              alt="Certificado de JavaScript Algorithms and Data Structures"
+            />
+          </a>
         </div>
       </div>
       <button
         class="carousel-control-prev"
         type="button"
-        data-bs-target="#carouselExample"
+        data-bs-target="#carouselCertifications"
         data-bs-slide="prev"
       >
         <ChevronLeft
           aria-hidden="true"
-          className=" icon-control-carousel display-5"
+          className="icon-control-carousel display-5"
         />
       </button>
       <button
         class="carousel-control-next"
         type="button"
-        data-bs-target="#carouselExample"
+        data-bs-target="#carouselCertifications"
         data-bs-slide="next"
       >
         <ChevronRight
           aria-hidden="true"
-          className=" icon-control-carousel display-5"
+          className="icon-control-carousel display-5"
         />
       </button>
     </div>
     <p>
-      Me entusiasma crear interfaces atractivas y fáciles de usar que brinden
-      una experiencia excepcional al usuario. Tengo un fuerte enfoque en la
-      accesibilidad, la capacidad de respuesta y el rendimiento.
+      Me entusiasma crear páginas web y apps con interfaces atractivas y fáciles de usar, que brinden una experiencia excepcional al usuario.
     </p>
-    <h1></h1>
+    <p>
+      Al programar, tengo un fuerte enfoque en la accesibilidad, la capacidad de respuesta y el rendimiento, siempre pensando en las sensaciones y experiencias del usuario final.
+    </p>
   </div>
 </Layout>
+
 <style>
   .container-about p {
     font-size: var(--fs-1);
   }
-  .image-certifications {
+ .image-certifications {
     display: block;
     width: 50%;
     height: auto;
     margin: auto;
     cursor: pointer;
   }
-  .icon-control-carousel {
+ .image-certifications:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 10px var(--colorOne);
+  }
+
+ .icon-control-carousel {
     fill: var(--colorOne);
   }
+
+  /*.foto-avatar{
+    width: 300px;
+    height: auto;
+    } */
 </style>
