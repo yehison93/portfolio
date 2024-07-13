@@ -17,14 +17,14 @@ const pageData = {
 <Layout pageData={pageData}>
   <div class="container-about text-main">
     <p>
-      Hola, ya saben mi nombre <strong>(esta por todas partes)</strong>. Soy una persona de Venezuela con mucho ánimo por crecer a nivel personal y profesional. Nací en Caracas en el año 1993. Amante de la familia, el trabajo y el café. Las personas que me conocen, dicen que soy una buena persona, y los compañeros de trabajo que he tenido en su mayoría tienen buena opinión de mí y el comentario frecuente es que soy apasionado y detallista.
+      Hola, ya saben mi nombre <strong>(esta por todas partes)</strong>. Soy un Venezolano con mucho ánimo por crecer a nivel personal y profesional. Nací en Caracas en el año 1993. Amante de la familia, el trabajo y el café. Las personas que me conocen dicen que soy una buena persona y los compañeros de trabajo que he tenido en su mayoría tienen buena opinión de mí y el comentario frecuente es que soy apasionado y detallista.
     </p>
     <div class="text-center"> 
       <Image 
         src={fotoYehison}
-        alt="foto Yehison"
-        class="foto-avatar text-center"
-        width={300}
+        alt="foto de Yehison"
+        class="foto-avatar"
+        width={500}
       />
     </div>
    
@@ -45,6 +45,7 @@ const pageData = {
               src={certificadoUno}
               class="image-certifications"
               alt="Certificado de Responsive Web Design"
+              width={600}
             />
           </a>
         </div>
@@ -57,6 +58,7 @@ const pageData = {
               src={certificadoDos}
               class="image-certifications"
               alt="Certificado de Front-end Development Libraries"
+              width={600}
             />
           </a>
         </div>
@@ -69,6 +71,7 @@ const pageData = {
               src={certificadoTres}
               class="image-certifications"
               alt="Certificado de JavaScript Algorithms and Data Structures"
+              width={600}
             />
           </a>
         </div>
@@ -108,6 +111,7 @@ const pageData = {
 <style>
   .container-about p {
     font-size: var(--fs-1);
+    text-align: justify;
   }
  .image-certifications {
     display: block;
@@ -123,6 +127,11 @@ const pageData = {
 
  .icon-control-carousel {
     fill: var(--colorOne);
+  }
+
+  .foto-avatar{
+    width: 300px;
+    height: auto
   }
 
 </style>
