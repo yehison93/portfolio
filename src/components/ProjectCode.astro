@@ -1,0 +1,11 @@
+---
+const {projectCode} = Astro.props;
+---
+
+<div class="container">
+  {projectCode.map((item)=>(
+    <code>
+      {item}
+    </code>
+  ))}
+</div>

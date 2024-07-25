@@ -1,8 +1,9 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config"
 
-import react from "@astrojs/react";
+// eslint-disable-next-line import/no-unresolved
+import react from "@astrojs/react"
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()]
-});
+  integrations: [react()],
+})

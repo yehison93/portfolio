@@ -13,7 +13,9 @@ const { pageData } = Astro.props;
         <Contact />
       </div>
       <div class="col-xs-12 col-xl-7 container-main-body">
-        <Page pageData={pageData}><slot /></Page>
+        <Page pageData={pageData}>
+          <slot />
+        </Page>
       </div>
     </div>
   </div>

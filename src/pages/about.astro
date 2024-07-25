@@ -2,22 +2,48 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import fotoYehison from "../assets/image/fotoYehison.png";
-import certificadoUno from "../assets/image/certificado01.jpg";
-import certificadoDos from "../assets/image/certificado02.png";
-import certificadoTres from "../assets/image/certificado03.png";
+import ImageCarousels from "../components/ImageCarousels.astro";
+import type { ImageMetadata } from 'astro';
 
-import { ChevronLeft, ChevronRight } from "react-bootstrap-icons";
 const pageData = {
   title: "Quién es",
   subTitle: "Yehison",
   description: "",
 };
+
+
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/certificates/*.{jpeg,jpg,png,gif}');
+const imagesItems = Object.keys(images);
+
+const carouselsData = {
+  data: [
+    {
+      title: "Responsive Web Desing",
+      description: "Certificado de finalización del curso de Responsive Web Desing",
+      imageLink: "https://www.freecodecamp.org/certification/fccb0679624-8087-4d66-b138-180b4f65df07/responsive-web-design",
+      imagePath: imagesItems,
+    },
+    {
+      title: "Front End Development Libraries",
+      description: "Certificado de finalización del curso de Front-end Development Libraries",
+      imageLink: "https://www.freecodecamp.org/certification/fccb0679624-8087-4d66-b138-180b4f65df07/front-end-development-libraries",
+      imagePath: imagesItems,
+    },
+    {
+      title: "Javascript Algorithms And Data Structures",
+      description: "Certificado de finalización del curso de avascript Algorithms And Data Structures",
+      imageLink: "https://www.freecodecamp.org/certification/fccb0679624-8087-4d66-b138-180b4f65df07/javascript-algorithms-and-data-structures",
+      imagePath: imagesItems,
+    },
+  ],
+  allImages: images,
+  };
 ---
 
 <Layout pageData={pageData}>
-  <div class="container-about text-main">
+  <div class="container-about">
     <p>
-      Hola, ya saben mi nombre <strong>(esta por todas partes)</strong>. Soy un Venezolano con mucho ánimo por crecer a nivel personal y profesional. Nací en Caracas en el año 1993. Amante de la familia, el trabajo y el café. Las personas que me conocen dicen que soy una buena persona y los compañeros de trabajo que he tenido en su mayoría tienen buena opinión de mí y el comentario frecuente es que soy apasionado y detallista.
+      Hola, ya saben mi nombre <strong>(esta por todas partes)</strong>. Soy un Venezolano con mucho ánimo por crecer a nivel personal y profesional. Nací en Caracas en el año 1993. Amante de la familia, el trabajo y el café. Las personas dicen que soy un buen sujeto y los compañeros de trabajo en su mayoría tienen buena opinión de mí y el comentario frecuente es que soy apasionado y detallista.
     </p>
     <div class="text-center"> 
       <Image 
@@ -35,72 +61,8 @@ const pageData = {
     <p>
       En este camino, me encontré con varias plataformas de aprendizaje online, entre ellas FreeCodeCamp, sitio en el cual he obtenido varias certificaciones que me han ayudado en mi formación como desarrollador.
     </p>
-    <div id="carouselCertifications" class="carousel slide my-5 mx-auto">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <a
-            href="https://www.freecodecamp.org/certification/fccb0679624-8087-4d66-b138-180b4f65df07/responsive-web-design"
-            target="_blank"
-          >
-            <Image
-              src={certificadoUno}
-              class="image-certifications"
-              alt="Certificado de Responsive Web Design"
-           
-            />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a
-            href="https://www.freecodecamp.org/certification/fccb0679624-8087-4d66-b138-180b4f65df07/front-end-development-libraries"
-            target="_blank"
-          >
-            <Image
-              src={certificadoDos}
-              class="image-certifications"
-              alt="Certificado de Front-end Development Libraries"
-           
-            />
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a
-            href="https://www.freecodecamp.org/certification/fccb0679624-8087-4d66-b138-180b4f65df07/javascript-algorithms-and-data-structures"
-            target="_blank"
-          >
-            <Image
-              src={certificadoTres}
-              class="image-certifications"
-              alt="Certificado de JavaScript Algorithms and Data Structures"
-          
-            />
-          </a>
-        </div>
-      </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselCertifications"
-        data-bs-slide="prev"
-      >
-        <ChevronLeft
-          aria-hidden="true"
-          className="icon-control-carousel display-5"
-        />
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselCertifications"
-        data-bs-slide="next"
-      >
-        <ChevronRight
-          aria-hidden="true"
-          className="icon-control-carousel display-5"
-        />
-      </button>
-    </div>
-    <p>
+    <ImageCarousels  carouselsData={carouselsData}/>
+    <p >
       Me entusiasma crear páginas web y apps con interfaces atractivas y fáciles de usar, que brinden una experiencia excepcional al usuario.
     </p>
     <p>
@@ -110,25 +72,6 @@ const pageData = {
 </Layout>
 
 <style>
-  .container-about p {
-    font-size: var(--fs-1);
-    text-align: justify;
-  }
- .image-certifications {
-    display: block;
-    width: 50%;
-    height: auto;
-    margin: auto;
-    cursor: pointer;
-  }
- .image-certifications:hover{
-    transform: scale(1.03);
-    box-shadow: 0 0 10px var(--colorOne);
-  }
-
- .icon-control-carousel {
-    fill: var(--colorOne);
-  }
 
   .foto-avatar{
     width: 300px;

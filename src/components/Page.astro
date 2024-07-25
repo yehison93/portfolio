@@ -7,7 +7,7 @@ const { pageData } = Astro.props;
 <>
   <main class="container container-page">
     <div
-      class="container-titles"
+      class="container-titles pb-2"
       transition:animate={slide({ duration: "1s" })}
     >
       <h2 class="container-title display-6">
@@ -28,6 +28,7 @@ const { pageData } = Astro.props;
         <div class="empty-space-bottom"></div>
       </div>
     </div>
+    
   </main>
 </>
 <style>
@@ -52,7 +53,7 @@ const { pageData } = Astro.props;
   }
 
   .empty-space-bottom {
-    height: 100px;
+    height: 150px;
   }
 
   .empty-space-top {
@@ -61,7 +62,7 @@ const { pageData } = Astro.props;
 
   @media screen and (max-width: 1200px) {
     .container-main {
-      min-width: 350px;
+      min-width: 80vw;
       height: calc(70vh - 40px);
     }
     .empty-space-bottom {

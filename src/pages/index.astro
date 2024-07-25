@@ -1,52 +1,22 @@
 ---
-import Navigations from "../components/Navigations.astro";
+import BadgesSkills from "../components/BadgesSkills.astro";
 import Layout from "../layouts/Layout.astro";
 import resources from "../resources/resources.json";
+
 const data = resources.info;
 const pageData = {
   title: "Desarrollador",
   subTitle: "Front-End",
   description: `Portafolio de ${resources.info.avatar.name}, un desarrollador front-end con experiencia en HTML, CSS, JavaScript, React, Astro, entre otras. Descubre mis proyectos web y más sobre mí aquí.`,
 };
-
-function shuffleArray(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
-}
-
-const shuffledSkills = shuffleArray(data.avatar.skills);
-
 ---
 
 <Layout pageData={pageData}>
   <div class="main-index-container">
-    <p class="text-main">
-      Desarrollador front-end apasionado por crear interfaces web atractivas y
-      funcionales.
+    <p>
+      Desarrollador front-end apasionado por crear interfaces web atractivas y funcionales.
     </p>
-    <p class="text-main">Con habilidades en:</p>
-    <div class="row gap-3 mx-3 my-auto skill-container">
-      {
-        shuffledSkills.map((item) => (
-          <div class="col badge container-badges fs-4">{item}</div>
-        ))
-      }
-    </div>
+    <h3>Habilidades:</h3>
+  <BadgesSkills dataSkills={data.avatar.skills} />
   </div>
 </Layout>
-
-<style>
-.skill-container{
-  margin: 10px;
-}
-.container-badges {
-    font-size: calc(0.5rem + 1vw);
-    color: var(--blueFour);
-    background-color: var(--colorOne);
-    box-shadow: 0 0 10px rgb(55, 55, 55);
-    
-  }
-</style>

@@ -1,0 +1,95 @@
+---
+import { Image } from "astro:assets";
+import { ChevronLeft, ChevronRight } from "react-bootstrap-icons";
+
+const {carouselsData} = Astro.props;
+const images = carouselsData.allImages || null;
+const items = carouselsData.data || null;
+
+const getImage = (item, index) => {
+   return images[item.imagePath[index]]()
+}
+---
+
+<div id="carouselCertifications" class="carousel slide m-auto" data-bs-ride="carousel" >
+    <div class="carousel-inner">
+        {
+            items.map((item, index) => 
+            ( 
+                <div class={index === 0?  "carousel-item active": "carousel-item"}  data-bs-interval="5000">
+                    <a
+                    href={item.imageLink}
+                    target="_blank"
+                    >
+                    <Image
+                      loading="lazy"
+                      src={images? getImage(item, index): item.imagePath}
+                      class="image-certifications"
+                      alt={item.description}
+                      width={600}
+                    
+                    />
+                    </a>
+                    <h3 style={{margin: "-20px auto 20px auto"}} class="text-center">{item.title}</h3>
+                </div>
+            ))
+
+        }
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselCertifications"
+      data-bs-slide="prev"
+    >
+      <ChevronLeft
+        aria-hidden="true"
+        className="icon-control-carousel display-5"
+      />
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselCertifications"
+      data-bs-slide="next"
+    >
+      <ChevronRight
+        aria-hidden="true"
+        className="icon-control-carousel display-5"
+      />
+    </button>
+  </div>
+
+  <style>
+    .image-certifications {
+        display: block;
+        width: 500px;
+        height: 281.25px; 
+        margin:  40px auto;
+        cursor: pointer;
+        transition: all ease-in-out 1000ms;
+    }
+    .image-certifications:hover{
+        transform: scale(1.1);
+        box-shadow: 0 0 10px var(--colorOne);
+    }
+
+    .icon-control-carousel {
+        fill: var(--colorOne);
+        transition: all ease-in-out 300ms;
+    }
+    .icon-control-carousel:hover{
+        fill: var(--colorTwo);
+        transform: scale(1.2);
+    }
+
+    @media screen and (max-width: 768px) {
+      .image-certifications {
+        width: 300px;
+        height: 168.82px; 
+      }
+      .icon-control-carousel{
+        visibility: hidden;
+      }
+    }
+  </style>

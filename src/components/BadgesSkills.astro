@@ -1,0 +1,44 @@
+---
+const {dataSkills} = Astro.props
+
+const shuffledSkills = [...dataSkills].sort(() => Math.random() - 0.5);
+---
+<div class="container">
+  <div class="row p-1 m-auto container-skills-main">
+    {
+      shuffledSkills.map((item) => (
+        <div class="col badge container-badges">{item}</div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .container-badges {
+    font-size: calc(0.4rem + 1vw);
+    color: var(--blueFour);
+    background-color: var(--colorOne);
+    box-shadow: 0 0 10px rgb(55, 55, 55);
+    transition: all ease-in-out 300ms;
+  }
+  .container-badges:hover{
+    color: var(--light);
+    box-shadow: 0 0 10px white;
+    transform: scale(1.05);
+  }
+  
+  .container-skills-main{
+    gap: 15px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .container-badges {
+      font-size: calc(0.8rem + 1vw);
+    }
+    .container-skills-main{
+    gap: 10px;
+    }
+  }
+
+
+</style>

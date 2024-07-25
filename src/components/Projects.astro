@@ -1,0 +1,38 @@
+---
+import BadgesSkills from "./BadgesSkills.astro";
+import ImageCarousels from "./ImageCarousels.astro";
+import ProjectCode from "./ProjectCode.astro";
+import ProjectData from "./ProjectData.astro";
+import SocialMedia from "./SocialMedia.astro";
+
+const {projectData} = Astro.props;
+
+---
+<div class="container">
+    <div class="row mb-2 text-center">
+        <h2>{projectData.shortDescription}</h2>
+        <BadgesSkills dataSkills={projectData.skills}/>
+        <ImageCarousels carouselsData={projectData.carouselsData} />
+    </div>
+    <div class="row my-2">
+        <ProjectData projectData={projectData} />
+        <h3>Descripción: </h3>
+        {
+            projectData.largeDescription.map((items)=>(
+                <p class="fs-5 description-text">
+                    {items}
+                </p>
+            ))
+        }
+    </div>
+    <div class="text-center">
+        <h3>Miralo en accion...</h3>
+        <SocialMedia dataSocialMedia={projectData.dataSocialMedia} />
+    </div>
+    <div>
+        <h3>Fragmentos del código</h3>
+        <ProjectCode projectCode={projectData.projectCode}/>
+    </div>
+
+    
+  </div>

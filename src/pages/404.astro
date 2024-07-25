@@ -6,33 +6,37 @@ const pageData = {
   subTitle: "404",
   description: "",
 };
+
 ---
 
 <Layout pageData={pageData}>
-  <div class="text-center">
-    <ExclamationOctagonFill
-      style={{ fill: "var(--colorOne) " }}
-      className="display-1"
-    />
-    <h1>Aquí no está lo que buscas.</h1>
-    <h3>Te redirigiré al menú en:</h3>
-    <h1 id="contador" class="display-1">10</h1>
-    <h3>segundos</h3>
+  <div class="container text-center">
+    <div class="row my-3 gap-4">
+      <ExclamationOctagonFill
+        style={{ fill: "var(--colorOne)", fontSize: "10rem"}}
+      />
+      <h2>Aquí no está lo que buscas<br/>o esta pagina esta en construcción.</h2>
+    </div>
+    <div class="row my-3">
+      <h3>Te redirigiré al menú en:</h3>
+      <h1 id="contador" class="display-1">10</h1>
+      <h3>segundos</h3>
+    </div>
+    
     <script>
       const TimeAll = 11;
-
       let tiempoRestante = TimeAll;
+      let interval;
 
       const actualizarContador = () => {
         tiempoRestante--;
-        document.getElementById("contador").textContent = tiempoRestante;
-
+        document.getElementById("contador").textContent = `${tiempoRestante}`;
         if (tiempoRestante === 0) {
           clearInterval(interval);
           window.location.href = "/menu";
         }
       };
-      const interval = setInterval(actualizarContador, 1000);
+      interval = setInterval(actualizarContador, 1000);
     </script>
   </div>
 </Layout>
