@@ -1,8 +1,9 @@
 ---
-const {dataSkills} = Astro.props
+const { dataSkills } = Astro.props;
 
 const shuffledSkills = [...dataSkills].sort(() => Math.random() - 0.5);
 ---
+
 <div class="container">
   <div class="row p-1 m-auto container-skills-main">
     {
@@ -21,13 +22,13 @@ const shuffledSkills = [...dataSkills].sort(() => Math.random() - 0.5);
     box-shadow: 0 0 10px rgb(55, 55, 55);
     transition: all ease-in-out 300ms;
   }
-  .container-badges:hover{
+  .container-badges:hover {
     color: var(--light);
     box-shadow: 0 0 10px white;
     transform: scale(1.05);
   }
-  
-  .container-skills-main{
+
+  .container-skills-main {
     gap: 15px;
   }
 
@@ -35,10 +36,8 @@ const shuffledSkills = [...dataSkills].sort(() => Math.random() - 0.5);
     .container-badges {
       font-size: calc(0.8rem + 1vw);
     }
-    .container-skills-main{
-    gap: 10px;
+    .container-skills-main {
+      gap: 10px;
     }
   }
-
-
 </style>

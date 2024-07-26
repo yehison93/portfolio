@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import fotoYehison from "../assets/image/fotoYehison.png";
 import ImageCarousels from "../components/ImageCarousels.astro";
-import type { ImageMetadata } from 'astro';
+import type { ImageMetadata } from "astro";
 
 const pageData = {
   title: "Quién es",
@@ -11,42 +11,54 @@ const pageData = {
   description: "",
 };
 
-
-const images = import.meta.glob<{ default: ImageMetadata }>('../assets/certificates/*.{jpeg,jpg,png,gif}');
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/certificates/*.{jpeg,jpg,png,gif}"
+);
 const imagesItems = Object.keys(images);
 
 const carouselsData = {
   data: [
     {
       title: "Responsive Web Desing",
-      description: "Certificado de finalización del curso de Responsive Web Desing",
-      imageLink: "https://www.freecodecamp.org/certification/fccb0679624-8087-4d66-b138-180b4f65df07/responsive-web-design",
+      description:
+        "Certificado de finalización del curso de Responsive Web Desing",
+      imageLink:
+        "https://www.freecodecamp.org/certification/fccb0679624-8087-4d66-b138-180b4f65df07/responsive-web-design",
       imagePath: imagesItems,
     },
     {
       title: "Front End Development Libraries",
-      description: "Certificado de finalización del curso de Front-end Development Libraries",
-      imageLink: "https://www.freecodecamp.org/certification/fccb0679624-8087-4d66-b138-180b4f65df07/front-end-development-libraries",
+      description:
+        "Certificado de finalización del curso de Front-end Development Libraries",
+      imageLink:
+        "https://www.freecodecamp.org/certification/fccb0679624-8087-4d66-b138-180b4f65df07/front-end-development-libraries",
       imagePath: imagesItems,
     },
     {
       title: "Javascript Algorithms And Data Structures",
-      description: "Certificado de finalización del curso de avascript Algorithms And Data Structures",
-      imageLink: "https://www.freecodecamp.org/certification/fccb0679624-8087-4d66-b138-180b4f65df07/javascript-algorithms-and-data-structures",
+      description:
+        "Certificado de finalización del curso de avascript Algorithms And Data Structures",
+      imageLink:
+        "https://www.freecodecamp.org/certification/fccb0679624-8087-4d66-b138-180b4f65df07/javascript-algorithms-and-data-structures",
       imagePath: imagesItems,
     },
   ],
   allImages: images,
-  };
+};
 ---
 
 <Layout pageData={pageData}>
   <div class="container-about">
     <p>
-      Hola, ya saben mi nombre <strong>(esta por todas partes)</strong>. Soy un Venezolano con mucho ánimo por crecer a nivel personal y profesional. Nací en Caracas en el año 1993. Amante de la familia, el trabajo y el café. Las personas dicen que soy un buen sujeto y los compañeros de trabajo en su mayoría tienen buena opinión de mí y el comentario frecuente es que soy apasionado y detallista.
+      Hola, ya saben mi nombre <strong>(esta por todas partes)</strong>. Soy un
+      Venezolano con mucho ánimo por crecer a nivel personal y profesional. Nací
+      en Caracas en el año 1993. Amante de la familia, el trabajo y el café. Las
+      personas dicen que soy un buen sujeto y los compañeros de trabajo en su
+      mayoría tienen buena opinión de mí y el comentario frecuente es que soy
+      apasionado y detallista.
     </p>
-    <div class="text-center"> 
-      <Image 
+    <div class="text-center">
+      <Image
         src={fotoYehison}
         alt="foto de Yehison"
         class="foto-avatar"
@@ -55,28 +67,33 @@ const carouselsData = {
         loading="lazy"
       />
     </div>
-   
+
     <p>
-      Hace menos de un año decidí sumergirme en el mundo del código, esto motivado por mi interés en la programación y mi carrera de ingeniería en informática. 
+      Hace menos de un año decidí sumergirme en el mundo del código, esto
+      motivado por mi interés en la programación y mi carrera de ingeniería en
+      informática.
     </p>
     <p>
-      En este camino, me encontré con varias plataformas de aprendizaje online, entre ellas FreeCodeCamp, sitio en el cual he obtenido varias certificaciones que me han ayudado en mi formación como desarrollador.
+      En este camino, me encontré con varias plataformas de aprendizaje online,
+      entre ellas FreeCodeCamp, sitio en el cual he obtenido varias
+      certificaciones que me han ayudado en mi formación como desarrollador.
     </p>
-    <ImageCarousels  carouselsData={carouselsData}/>
-    <p >
-      Me entusiasma crear páginas web y apps con interfaces atractivas y fáciles de usar, que brinden una experiencia excepcional al usuario.
+    <ImageCarousels carouselsData={carouselsData} />
+    <p>
+      Me entusiasma crear páginas web y apps con interfaces atractivas y fáciles
+      de usar, que brinden una experiencia excepcional al usuario.
     </p>
     <p>
-      Al programar, tengo un fuerte enfoque en la accesibilidad, la capacidad de respuesta y el rendimiento, siempre pensando en las sensaciones y experiencias del usuario final.
+      Al programar, tengo un fuerte enfoque en la accesibilidad, la capacidad de
+      respuesta y el rendimiento, siempre pensando en las sensaciones y
+      experiencias del usuario final.
     </p>
   </div>
 </Layout>
 
 <style>
-
-  .foto-avatar{
+  .foto-avatar {
     width: 300px;
-    height: auto
+    height: auto;
   }
-
 </style>

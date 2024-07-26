@@ -1,38 +1,35 @@
 ---
-const {dataSocialMedia} = Astro.props;
+const { dataSocialMedia } = Astro.props;
 ---
-{dataSocialMedia && 
-  (
+
+{
+  dataSocialMedia && (
     <div>
       <div class="hstack gap-3 container-social-media">
-        {
-            dataSocialMedia.map((item) => (
-            <a href={item.link} target="_blank">
-                <item.icon className="container-icon"/>
-            </a>
-            ))
-        }
-        </div>
+        {dataSocialMedia.map((item) => (
+          <a href={item.link} target="_blank">
+            <item.icon className="container-icon" />
+          </a>
+        ))}
+      </div>
     </div>
   )
 }
 
+<style>
+  .container-social-media {
+    justify-content: center;
+    margin: 5px;
+  }
 
-  <style>
-    .container-social-media {
-      justify-content: center;
-      margin: 5px;
-    }
+  .container-icon {
+    fill: white;
+    font-size: 2rem;
+    transition: all 0.3s ease-in-out;
+  }
 
-    .container-icon {
-      fill: white;
-      font-size: 2rem;
-      transition: all 0.3s ease-in-out;
-    }
-  
-    .container-icon:hover {
-      fill: var(--colorOne);
-      transform: scale(1.2);
-    }
-  </style>
-  
+  .container-icon:hover {
+    fill: var(--colorOne);
+    transform: scale(1.2);
+  }
+</style>

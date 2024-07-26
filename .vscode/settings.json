@@ -1,7 +1,5 @@
 {
   "cSpell.language": "en,es",
-  "cSpell.enableFiletypes": [
-    "astro",
-    "dart"
-  ]
+  "cSpell.enableFiletypes": ["astro", "dart"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

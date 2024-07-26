@@ -1,11 +1,17 @@
 ---
-const {projectCode} = Astro.props;
+const { projectCode } = Astro.props;
 ---
 
-<div class="container">
-  {projectCode.map((item)=>(
-    <code>
-      {item}
-    </code>
-  ))}
+<div class="code-block">
+  {projectCode.map((item) => <script src={item} />)}
 </div>
+<style>
+  /* https://github.com/lonekorean/gist-syntax-themes */
+  @import url("https://cdn.rawgit.com/lonekorean/gist-syntax-themes/848d6580/stylesheets/monokai.css");
+
+  .code-block {
+    font:
+      16px var(--fontText),
+      sans-serif;
+  }
+</style>

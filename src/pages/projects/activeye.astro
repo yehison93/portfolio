@@ -1,28 +1,26 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Projects from "../../components/Projects.astro";
-import type { ImageMetadata } from 'astro';
+import type { ImageMetadata } from "astro";
 import { Github, Link, Instagram, Linkedin } from "react-bootstrap-icons";
 
-const images = import.meta.glob<{ default: ImageMetadata }>('../../assets/projects/ActivEye/*.{jpeg,jpg,png,gif}');
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../../assets/projects/ActivEye/*.{jpeg,jpg,png,gif}"
+);
 const imagesItems = Object.keys(images);
 
 const pageData = {
   title: "Proyecto:",
   subTitle: "ActivEye",
-  description: "Página que muestra información sobre el proyecto ActivEye, creado por Yehison Perdomo.",
+  description:
+    "Página que muestra información sobre el proyecto ActivEye, creado por Yehison Perdomo.",
 };
 
 const dataSocialMedia = [
   {
-    name: "GitHub",
-    icon: Github,
-    link: 'https://github.com/yehison93/activeye'
-  },
-  {
     name: "App Web",
     icon: Link,
-    link: 'https://activeye-one.vercel.app/'
+    link: "https://activeye-one.vercel.app/",
   },
 ];
 
@@ -39,60 +37,22 @@ const carouselsData = {
 };
 
 const projectCode = [
-`
----
-import Layout from "../../layouts/Layout.astro";
-import Navigations from "../../components/Navigations.astro";
-const pageData = {
-  title: "",
-  subTitle: "Menu",
-};
-const allPage = {
-  "Home": "/",
-  "Sobre Mi": "/about",
-  "Proyectos": "/menu/projects",
-  // "Contacto": "/contact",
-};
----
-
-<Layout pageData={pageData}>
-  <Navigations allPage={allPage} />
-</Layout>
-
-`,
-`
----
-import Layout from "../../layouts/Layout.astro";
-import Navigations from "../../components/Navigations.astro";
-const pageData = {
-  title: "",
-  subTitle: "Menu",
-};
-const allPage = {
-  "Home": "/",
-  "Sobre Mi": "/about",
-  "Proyectos": "/menu/projects",
-  // "Contacto": "/contact",
-};
----
-
-<Layout pageData={pageData}>
-  <Navigations allPage={allPage} />
-</Layout>
-
-`,
-]
+  "https://gist.github.com/yehison93/0505470841ca6f439aadfd8671680cb8.js",
+  "https://gist.github.com/yehison93/6ee55b0b61d30c54ab21459c740e74b7.js",
+];
 
 const projectData = {
   title: "ActivEye",
-  authors: [{
-    name: "Yehison Perdomo",
-  }],
+  authors: [
+    {
+      name: "Yehison Perdomo",
+    },
+  ],
   shortDescription: "App Web VR para tratar la Ambliopía",
   largeDescription: [
     "ActivEye en español es algo similar a ojo activo, surge de la oposición a ojo vago, forma en como también se le conoce a la Ambliopía.",
     "La idea de esta App surgió de los Drs. oftalmólogos José Campos y José Zerpa, quienes también colaboraron en este proyecto como asesores.",
-    "El funcionamiento de esta App se basa en la posibilidad de hacer una terapia de parche virtual, viendo por un ojo canales de IPTV (el ojo que estará haciendo la terapia), mientras por el otro ojo no verá nada. Esto será posible mientras el usuario pueda usar su teléfono inteligente con un Cardboard o un casco de realidad virtual."
+    "El funcionamiento de esta App se basa en la posibilidad de hacer una terapia de parche virtual, viendo por un ojo canales de IPTV (el ojo que estará haciendo la terapia), mientras por el otro ojo no verá nada. Esto será posible mientras el usuario pueda usar su teléfono inteligente con un Cardboard o un casco de realidad virtual.",
   ],
   projectCode: projectCode,
   skills: [
@@ -111,39 +71,41 @@ const projectData = {
     "Oftalmología",
     "Ambliopía",
     "Ojo Vago",
-    "App Web"
+    "App Web",
   ],
   carouselsData: carouselsData,
   dataSocialMedia: dataSocialMedia,
   typeProject: "Privado",
   collaborations: [
     {
-    name: "Dr. José Campos",
-    socialMedia: [{
-      name: "Instagram",
-      icon: Instagram,
-      link: "https://www.instagram.com/alexcamps/?hl=es-la"
+      name: "Dr. José Campos",
+      socialMedia: [
+        {
+          name: "Instagram",
+          icon: Instagram,
+          link: "https://www.instagram.com/alexcamps/?hl=es-la",
+        },
+        {
+          name: "Linkedin",
+          icon: Linkedin,
+          link: "https://ve.linkedin.com/in/jos%C3%A9-alexander-campos-271023162",
+        },
+      ],
     },
     {
-      name: "Linkedin",
-      icon: Linkedin,
-      link: "https://ve.linkedin.com/in/jos%C3%A9-alexander-campos-271023162"
-    }]
-  },
-  {
-    name: "Dr. Alberto Zerpa",
-    socialMedia: [
-      {
-      name: "Instagram",
-      icon: Instagram,
-      link: "https://www.instagram.com/albe1912/?hl=es-la"
+      name: "Dr. Alberto Zerpa",
+      socialMedia: [
+        {
+          name: "Instagram",
+          icon: Instagram,
+          link: "https://www.instagram.com/albe1912/?hl=es-la",
+        },
+      ],
     },
-    ]
-  },
-]
+  ],
 };
-
 ---
+
 <Layout pageData={pageData}>
   <Projects projectData={projectData} />
 </Layout>

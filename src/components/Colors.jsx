@@ -4,7 +4,7 @@ function getRandomInt() {
   const min = Math.ceil(0);
   const max = Math.floor(color.length);
   return Math.floor(Math.random() * (max - min)) + min;
-};
+}
 
 const Colors = () => {
   const [colors, setColors] = useState({});

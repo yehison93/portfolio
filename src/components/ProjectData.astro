@@ -1,50 +1,54 @@
 ---
-import Persons from "./Persons.astro"
-
-const {projectData} = Astro.props
+import Persons from "./Persons.astro";
+const { projectData } = Astro.props;
 ---
 
 <div class="container">
   <div>
-    <h3>Nombre:</h3>
+    <h3 class="position-relative">
+      Nombre:
+      <div class="underline"></div>
+    </h3>
     <ul class="vstack gap-3">
-      <li class="position-relative">
+      <li>
         <span class="hstack gap-5">
-          <h4>{projectData.title}</h4>
-          <div class="underline" />
+          <h4 class="mt-2">{projectData.title}</h4>
         </span>
-        
       </li>
     </ul>
   </div>
-  <>
+  <div>
     {
       projectData.authors && (
-        <h3>{projectData.authors.length > 1 ? "Autores" : "Autor"}:</h3>
+        <h3 class="position-relative">
+          {projectData.authors.length > 1 ? "Autores" : "Autor"}:
+          <div class="underline" />
+        </h3>
         <Persons dataPersons={projectData.authors}/>
       )
     }
-  </>
-
-  <>
+  </div>
+  <div>
     {
       projectData.collaborations && (
-        <h3>{projectData.collaborations.length > 1 ? "Colaboradores" : "Colaborador"}:</h3>
+        <h3 class="position-relative">
+          {projectData.collaborations.length > 1 ? "Colaboradores" : "Colaborador"}:
+          <div class="underline" />
+        </h3>
         <Persons dataPersons={projectData.collaborations}/>
       )
     }
-  </>
-  
-
+  </div>
   <div>
-    <h3>Proyecto:</h3>
+    <h3  class="position-relative">
+      Proyecto:
+      <div class="underline" />
+    </h3>
     <ul class="vstack gap-3">
-      <li class="position-relative">
+      <li>
         <span class="hstack gap-5">
-          <h4>{projectData.typeProject}</h4>
-          <div class="underline" />
+          <h4 class="mt-2">{projectData.typeProject}</h4>
         </span>
-        
       </li>
     </ul>
   </div>

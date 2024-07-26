@@ -1,0 +1,53 @@
+---
+import Persons from "./Persons.astro";
+const { projectData } = Astro.props;
+---
+
+<div class="container">
+  <div>
+    <h3 class="position-relative">
+      Nombre:
+      <div class="underline"></div>
+    </h3>
+    <ul class="vstack gap-3">
+      <li>
+        <span class="hstack gap-5">
+          <h4>{projectData.title}</h4>
+        </span>
+      </li>
+    </ul>
+  </div>
+  <>
+  {
+    projectData.authors && (
+      <h3 class="position-relative">
+        {projectData.authors.length > 1 ? "Autores" : "Autor"}:
+        <div class="underline" />
+      </h3>
+      
+      <Persons dataPersons={projectData.authors}/>
+    )
+  }
+</>
+<>
+  {
+    projectData.collaborations && (
+      <h3 class="position-relative">
+        {projectData.collaborations.length > 1 ? "Colaboradores" : "Colaborador"}:
+        <div class="underline" />
+      </h3>
+      <Persons dataPersons={projectData.collaborations}/>
+    )
+  }
+</>
+  <div>
+    <h3>Proyecto:</h3>
+    <ul class="vstack gap-3">
+      <li>
+        <span class="hstack gap-5">
+          <h4>{projectData.typeProject}</h4>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
