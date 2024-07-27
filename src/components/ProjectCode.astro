@@ -3,12 +3,9 @@ const { projectCode } = Astro.props;
 ---
 
 <div class="code-block">
-  {projectCode.map((item) => <script src={item} />)}
+  {projectCode.map((item) => <script type="module" src={item} />)}
 </div>
 <style>
-  /* https://github.com/lonekorean/gist-syntax-themes */
-  
-
   .code-block {
     font:
       16px var(--fontText),

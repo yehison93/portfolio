@@ -16,18 +16,18 @@ const { projectData } = Astro.props;
   </div>
   <div class="my-3">
     <ProjectData projectData={projectData} />
-    <h3 class="position-relative">
+    <h3 class="position-relative mb-3">
       Descripción:
       <div class="underline"></div>
     </h3>
     {
       projectData.largeDescription.map((items) => (
-        <p class="fs-5 mt-2 description-text">{items}</p>
+        <p class="fs-5 my-2 description-text">{items}</p>
       ))
     }
   </div>
   <div class="mb-5 text-center">
-    <h3>Miralo en acción:</h3>
+    <h3>Míralo en acción:</h3>
     <SocialMedia dataSocialMedia={projectData.dataSocialMedia} />
   </div>
   <div>

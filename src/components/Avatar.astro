@@ -1,14 +1,14 @@
 ---
-import resorces from "../resources/resources.json";
-const dates = resorces.info.avatar;
+import resources from "../resources/resources.json";
+const data = resources.info.avatar;
 ---
 
-<div onclick="" class="container container-name-contact color-transition">
-  <h1 class="container-firts-name">
-    {dates.name.split(" ")[0]}
+<div class="container container-name-contact color-transition">
+  <h1 class="container-first-name">
+    {data.name.split(" ")[0]}
   </h1>
   <h1 class="container-last-name">
-    {dates.name.split(" ")[1]}
+    {data.name.split(" ")[1]}
   </h1>
 </div>
 
@@ -19,7 +19,7 @@ const dates = resorces.info.avatar;
     margin: 0;
   }
 
-  .container-firts-name {
+  .container-first-name {
     cursor: none;
     font-size: calc(1rem + 5vw);
     text-align: start;
@@ -66,7 +66,7 @@ const dates = resorces.info.avatar;
     .container-name-contact {
       max-width: calc(150px + 20vw);
     }
-    .container-firts-name {
+    .container-first-name {
       margin: -5px 0;
     }
     .container-last-name {
