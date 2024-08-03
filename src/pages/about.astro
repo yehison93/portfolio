@@ -50,38 +50,40 @@ const carouselsData = {
 <Layout pageData={pageData}>
   <div class="container-about">
     <p>
-      Hola, ya saben mi nombre <strong>(esta por todas partes)</strong>. Soy un
-      Venezolano con mucho ánimo por crecer a nivel personal y profesional. Nací
-      en Caracas en el año 1993. Amante de la familia, el trabajo y el café. Las
-      personas dicen que soy un buen sujeto y los compañeros de trabajo en su
-      mayoría tienen buena opinión de mí y el comentario frecuente es que soy
-      apasionado y detallista.
+      Soy un venezolano nacido en Caracas, con mucho amor por la familia, la
+      tecnología y el cafe. Mi curiosidad y pasión por el aprendizaje me han
+      llevado a explorar un mundo de posibilidades dentro del universo de la
+      tecnología, aterrizando con solidas bases en el mundo de la programación y
+      el desarrollo.
     </p>
     <div class="text-center">
       <Image
         src={fotoYehison}
         alt="foto de Yehison"
         class="foto-avatar"
-        width={600}
-        height={373}
+        width={1200}
         loading="lazy"
       />
     </div>
 
     <p>
-      Hace menos de un año decidí sumergirme en el mundo del código, esto
-      motivado por mi interés en la programación y mi carrera de ingeniería en
-      informática.
+      Hace menos de un año, decidí sumergirme en el mundo del código, motivado
+      por mi interés en la programación y mi carrera de ingeniería en
+      informática. Desde entonces, he estado aprendiendo, poniendo en practica y
+      creando nuevos proyectos.
     </p>
     <p>
-      En este camino, me encontré con varias plataformas de aprendizaje online,
-      entre ellas FreeCodeCamp, sitio en el cual he obtenido varias
-      certificaciones que me han ayudado en mi formación como desarrollador.
+      En mi camino como desarrollador, me encontré con varias plataformas de
+      aprendizaje online, entre ellas FreeCodeCamp, sitio en el cual he obtenido
+      varias certificaciones que me han ayudado en mi formación como
+      desarrollador.
     </p>
     <ImageCarousels carouselsData={carouselsData} />
     <p>
-      Me entusiasma crear páginas web y apps con interfaces atractivas y fáciles
-      de usar, que brinden una experiencia excepcional al usuario.
+      Me entusiasma crear y participar en
+       páginas web y apps con interfaces atractivas y fáciles
+      de usar, que brinden la mejor experiencia posible al usuario. Mi objetivo
+      es siempre brindar una experiencia excepcional.
     </p>
     <p>
       Al programar, tengo un fuerte enfoque en la accesibilidad, la capacidad de
@@ -93,7 +95,15 @@ const carouselsData = {
 
 <style>
   .foto-avatar {
-    width: 300px;
+    width: 50%;
     height: auto;
+    margin: -50px auto auto;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .foto-avatar {
+      margin: -50px auto auto auto;
+      width: 100%;
+    }
   }
 </style>

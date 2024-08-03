@@ -2,13 +2,15 @@
 const { projectCode } = Astro.props;
 ---
 
-<div class="code-block">
-  {projectCode.map((item) => <script type="module" src={item} />)}
+<div class="container">
+  {
+    projectCode.map((item) => (
+      <div class="row">
+        <script src={item} />
+      </div>
+    ))
+  }
 </div>
 <style>
-  .code-block {
-    font:
-      16px var(--fontText),
-      sans-serif;
-  }
+  @import url("https://cdn.rawgit.com/lonekorean/gist-syntax-themes/848d6580/stylesheets/monokai.css");
 </style>
