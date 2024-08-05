@@ -6,7 +6,7 @@ const { projectData } = Astro.props;
 <div class="container">
   <div>
     <h3 class="position-relative">
-      Nombre:
+      Nombre
       <div class="underline"></div>
     </h3>
     <ul class="vstack gap-3">
@@ -21,7 +21,7 @@ const { projectData } = Astro.props;
     {
       projectData.authors && (
         <h3 class="position-relative">
-          {projectData.authors.length > 1 ? "Autores" : "Autor"}:
+          {projectData.authors.length > 1 ? "Autores" : "Autor"}
           <div class="underline" />
         </h3>
         <Persons dataPersons={projectData.authors}/>
@@ -32,7 +32,7 @@ const { projectData } = Astro.props;
     {
       projectData.collaborations && (
         <h3 class="position-relative">
-          {projectData.collaborations.length > 1 ? "Colaboradores" : "Colaborador"}:
+          {projectData.collaborations.length > 1 ? "Colaboradores" : "Colaborador"}
           <div class="underline" />
         </h3>
         <Persons dataPersons={projectData.collaborations}/>
@@ -41,13 +41,26 @@ const { projectData } = Astro.props;
   </div>
   <div>
     <h3  class="position-relative">
-      Proyecto:
+      Proyecto
       <div class="underline" />
     </h3>
     <ul class="vstack gap-3">
       <li>
         <span class="hstack gap-5">
           <h4 class="mt-2">{projectData.typeProject}</h4>
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <h3  class="position-relative">
+      Estado
+      <div class="underline" />
+    </h3>
+    <ul class="vstack gap-3">
+      <li>
+        <span class="hstack gap-5">
+          <h4 class="mt-2">{projectData.state}</h4>
         </span>
       </li>
     </ul>

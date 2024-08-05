@@ -2,83 +2,61 @@
 import Layout from "../../layouts/Layout.astro";
 import Projects from "../../components/Projects.astro";
 import type { ImageMetadata } from "astro";
-import { Github, Link, Instagram, Linkedin } from "react-bootstrap-icons";
+import { Linkedin } from "react-bootstrap-icons";
 
 // Configuración del proyecto
 const projectConfig = {
-  title: "ActivEye",
-  subTitle: "Proyecto de Yehison Perdomo",
-  description: "Página que muestra información sobre el proyecto ActivEye",
+  title: "Proyecto",
+  subTitle: "PokerWall",
+  description: "Página que muestra información sobre el proyecto PokerWall",
 };
 
 // Datos del proyecto
 const projectData = {
   title: projectConfig.title,
+  subTitle: projectConfig.subTitle,
   authors: [
     {
       name: "Yehison Perdomo",
     },
   ],
-  shortDescription: "App Web VR para tratar la Ambliopía",
+  shortDescription: "Muro de información sobre apuestas de Poker",
   largeDescription: [
-    "ActivEye en español es algo similar a ojo activo, surge de la oposición a ojo vago, forma en como también se le conoce a la Ambliopía.",
-    "La idea de esta App surgió de los Drs. oftalmólogos José Campos y José Zerpa, quienes también colaboraron en este proyecto como asesores.",
-    "El funcionamiento de esta App se basa en la posibilidad de hacer una terapia de parche virtual, viendo por un ojo canales de IPTV (el ojo que estará haciendo la terapia), mientras por el otro ojo no verá nada. Esto será posible mientras el usuario pueda usar su teléfono inteligente con un Cardboard o un casco de realidad virtual.",
+    "Poker Wall o muro de Poker, es una App Web que muestra información sobre apuestas de poker en diferentes modalidades. ",
+    "Consta de dos pantallas, una para clientes y la otra para el administrador. En la pantalla de los clientes se muestra todo lo referente a las apuestas y esta se actualiza en vivo a medida de que los parametros de las apuestas vayan cambiando. El panel de administración, es un formulario con opciones para modificar los datos que se mostraran en la pantalla de clientes",
+    "Esta App tiene el fin de usarse en pantallas en las salas de Poker o desde los dispositivos móviles de los jugadores y administradores",
+    "Se usó la herramienta de compilación Vite y el FrameWork React para su construcción, junto con Bootstrap para potenciar los estilos de la app.",
   ],
   skills: [
     "React",
     "CSS",
     "HTML",
     "Vite",
-    "A-Frame",
-    "Three.js",
     "Bootstrap",
     "Firebase",
-    "VR",
-    "3D",
-    "IPTV",
-    "HLS",
-    "Oftalmología",
-    "Ambliopía",
-    "Ojo Vago",
     "App Web",
+    "Diseño",
+    "Java Script",
+    "Web Socket",
+    "Poker",
+    "Casinos",
   ],
   typeProject: "Privado",
+  state: "En construcción",
 };
 
 // Datos de las redes sociales
-const socialMediaData = [
-  {
-    name: "App Web",
-    icon: Link,
-    link: "https://activeye-one.vercel.app/",
-  },
-];
+const socialMediaData = null;
 
 // Datos de los colaboradores
 const collaborationsData = [
   {
-    name: "Dr. José Campos",
+    name: "DG. Emily Castro",
     socialMedia: [
       {
-        name: "Instagram",
-        icon: Instagram,
-        link: "https://www.instagram.com/alexcamps/?hl=es-la",
-      },
-      {
-        name: "Linkedin",
+        name: "LinkedIn",
         icon: Linkedin,
-        link: "https://ve.linkedin.com/in/jos%C3%A9-alexander-campos-271023162",
-      },
-    ],
-  },
-  {
-    name: "Dr. Alberto Zerpa",
-    socialMedia: [
-      {
-        name: "Instagram",
-        icon: Instagram,
-        link: "https://www.instagram.com/albe1912/?hl=es-la",
+        link: "https://www.linkedin.com/in/emilyda-castrog/",
       },
     ],
   },
@@ -86,7 +64,7 @@ const collaborationsData = [
 
 // Datos de las imágenes
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "../../assets/projects/ActivEye/*.{jpeg,jpg,png,gif}"
+  "../../assets/projects/PokerWall/*.{jpeg,jpg,png,gif.mp4}"
 );
 const imagesItems = Object.keys(images);
 
@@ -96,7 +74,7 @@ const carouselsData = {
     return {
       title: null,
       description: `Imagen del proyecto ActivEye 0${index + 1}`,
-      imageLink: "https://activeye-one.vercel.app/",
+      imageLink: null,
       imagePath: imagesItems,
     };
   }),
@@ -105,8 +83,8 @@ const carouselsData = {
 
 // Código del proyecto
 const projectCode = [
-  "https://gist.github.com/yehison93/0505470841ca6f439aadfd8671680cb8.js",
-  "https://gist.github.com/yehison93/6ee55b0b61d30c54ab21459c740e74b7.js",
+  "https://gist.github.com/yehison93/958e26be4a888c6c3fc361552f11dc1a.js",
+  "https://gist.github.com/yehison93/a31645402f7657dacf4da40abfb42cfc.js",
 ];
 
 // Página

@@ -1,0 +1,114 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Projects from "../../components/Projects.astro";
+import type { ImageMetadata } from "astro";
+import { Link, Instagram, Linkedin, Github } from "react-bootstrap-icons";
+
+// Configuración del proyecto
+const projectConfig = {
+  title: "Proyecto",
+  subTitle: "MovieSeriesFinder",
+  description:
+    "Página que muestra información sobre el proyecto MovieSeriesFinder",
+};
+
+// Datos del proyecto
+const projectData = {
+  title: projectConfig.title,
+  subTitle: projectConfig.subTitle,
+  authors: [
+    {
+      name: "Yehison Perdomo",
+    },
+  ],
+  shortDescription: "Reseñas de películas, series y Personajes",
+  largeDescription: [
+    "MovieSeriesFinder, como su nombre lo indica es un buscador de películas y series, pero también puede mostrar personajes y colecciones.",
+    "Se trata de una App Web que muestra un formulario donde puedes buscar clasificando por tipo o a través del titulo o referencia.",
+    "Es muy simple pero potente, la búsqueda es en tiempo real sin refrescar la pagina, lo que hace que sea mas fluida y cómoda.",
+    "La App toma datos de un API, y la muestra en una lista fluida de coincidencias.",
+    "Se construyó usando la  herramienta de compilación Vite y el FrameWork React, Bootstrap sirvió para potenciar los estilos. Para la base de datos de uso la API de The Movie Data Base (TMDB)",
+  ],
+  skills: [
+    "React",
+    "CSS",
+    "HTML",
+    "Vite",
+    "Bootstrap",
+    "TMDB",
+    "App Web",
+    "Diseño",
+    "Java Script",
+    "Movie",
+    "Series",
+    "Search",
+    "API",
+    "Persons",
+    "Collections",
+  ],
+  typeProject: "Publico",
+  state: "Publicado",
+};
+
+// Datos de las redes sociales
+const socialMediaData = [
+  {
+    name: "App Web",
+    icon: Link,
+    link: "https://movieseriesfinder.netlify.app/",
+  },
+  {
+    name: "App Web",
+    icon: Github,
+    link: "https://github.com/yehison93/MovieSeriesFinder",
+  },
+];
+
+// Datos de los colaboradores
+const collaborationsData = null;
+
+// Datos de las imágenes
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../../assets/projects/MovieSeriesFinder/*.{jpeg,jpg,png,gif.mp4}"
+);
+const imagesItems = Object.keys(images);
+
+// Datos del carrusel
+const carouselsData = {
+  data: imagesItems.map((item, index) => {
+    return {
+      title: null,
+      description: `Imagen del proyecto ActivEye 0${index + 1}`,
+      imageLink: "https://movieseriesfinder.netlify.app/",
+      imagePath: imagesItems,
+    };
+  }),
+  allImages: images,
+};
+
+// Código del proyecto
+const projectCode = [
+  "https://gist.github.com/yehison93/6ced18b54ed02a89ed4251df80adf5c5.js",
+  "https://gist.github.com/yehison93/c1e6a33f0f071b8f4c3d5b647f361aa8.js",
+];
+
+// Página
+const pageData = {
+  title: projectConfig.title,
+  subTitle: projectConfig.subTitle,
+  description: projectConfig.description,
+};
+---
+
+<Layout pageData={pageData}>
+  <Projects
+    projectData={{
+      ...projectData,
+      carouselsData,
+      dataSocialMedia: socialMediaData,
+      collaborations: collaborationsData,
+      projectCode,
+    }}
+  />
+</Layout>;
+

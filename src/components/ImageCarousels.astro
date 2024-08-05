@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import { ChevronLeft, ChevronRight } from "react-bootstrap-icons";
 
 const { carouselsData } = Astro.props;
@@ -24,11 +24,10 @@ const getImage = (item, index) => {
           data-bs-interval="3000"
         >
           <a href={item.imageLink} target="_blank">
-            <Image
+            <Picture
               src={images ? getImage(item, index) : item.imagePath}
               class="image-certifications"
               alt={item.description}
-              width={600}
               loading="lazy"
             />
           </a>
@@ -66,16 +65,16 @@ const getImage = (item, index) => {
 <style>
   .image-certifications {
     display: block;
-    width: 500px;
-    height: 281.25px;
+    max-width: 500px;
+    max-height: 281.25px;
     margin: 40px auto;
     cursor: pointer;
+    border-radius: 10px;
     box-shadow: 0 0 5px var(--colorOne);
     transition: all ease-in-out 1000ms;
   }
   .image-certifications:hover {
     transform: scale(1.1);
-    border-radius: 10px;
     box-shadow: 0 0 20px var(--colorOne);
   }
 
