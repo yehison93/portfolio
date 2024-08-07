@@ -12,7 +12,8 @@ const { projectCode } = Astro.props;
   }
   <div class="alert alert-info" role="alert">
     Si no ha cargado el bloque de código <a
-      class="alert-link alert-refresh"
+      class="alert-link"
+      href=""
       id="refresh-link">refresca la pagina</a
     >
   </div>
@@ -24,8 +25,8 @@ const { projectCode } = Astro.props;
 </div>
 
 <style>
-  .alert-refresh:hover {
+  #refresh-link:hover {
     transform: scale(1.2);
-    cursor: pointer;
+    transition: all ease-in-out 300ms;
   }
 </style>
