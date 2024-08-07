@@ -6,7 +6,7 @@ const { projectCode } = Astro.props;
   {
     projectCode.map((item) => (
       <div class="row">
-        <script is:inline src={item} />
+        <script is:inline data-astro-rerun src={item} />
       </div>
     ))
   }
