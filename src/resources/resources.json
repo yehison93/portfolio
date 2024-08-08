@@ -3,7 +3,7 @@
     "avatar": {
       "name": "Yehison Perdomo",
       "birthDate": "1993/11/10",
-      "email": "yehison93@gmail.com",
+      "email": "yehison.developer@gmail.com/",
       "title": "Desarrollador Front-End",
       "description": "Portafolio de Yehison Perdomo, un desarrollador front-end con experiencia en HTML, CSS, JavaScript, React, Astro, entre otras. Descubre mis proyectos web y mas sobre mi aquí.",
       "skills": [
@@ -24,7 +24,11 @@
         "Detallista",
         "SEO",
         "Optimización",
-        "Trabajo en equipo"
+        "Trabajo en equipo",
+        "UI",
+        "UX",
+        "FireBase",
+        "BootsTrap"
       ],
       "socialMedia": {
         "LinkedIn": "",
