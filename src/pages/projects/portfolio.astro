@@ -1,0 +1,122 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Projects from "../../components/Projects.astro";
+import type { ImageMetadata } from "astro";
+import { Link, Instagram, Linkedin, Github } from "react-bootstrap-icons";
+
+// Configuración del proyecto
+const projectConfig = {
+  title: "Proyecto",
+  subTitle: "Portfolio",
+  description: "Página que muestra información sobre el proyecto Portfolio",
+};
+
+// Datos del proyecto
+const projectData = {
+  title: projectConfig.title,
+  subTitle: projectConfig.subTitle,
+  authors: [
+    {
+      name: "Yehison Perdomo",
+    },
+  ],
+  shortDescription: "Portfolio de Yehison Perdomo",
+  largeDescription: [
+    "Inspirado en la idea de una tarjeta de presentación.",
+    "La página que estas visitando, también es ejemplo de uno de los proyectos personales de Yehison Perdomo.",
+    "Con la intención de crear un espacio creativo para mostrar los proyectos, surgió la idea de este portafolio digital",
+    "La diseñador gráfico Emily Castro colaboro en este proyecto aportando el logotipo de marca, paleta de colores y la idea de la maquetación del sitio",
+    "Este proyecto se desarrollo con el Framework Astro, el cual es ideal para este tipo de contenido estático.",
+    "También se uso React en algunos componentes donde se necesitaba interactividad del lado del cliente",
+    "Para el desarrollo de los estilos de la pagina se uso Bootstrap, lo que permitió unos terminados elegantes y minimalistas",
+    ,
+  ],
+  skills: [
+    "Astro",
+    "React",
+    "Bootstrap",
+    "CSS",
+    "HTML",
+    "Portfolio",
+    "App Web",
+    "UX",
+    "UI",
+    "Proyectos",
+  ],
+  typeProject: "Publico",
+  state: "En producción",
+};
+
+// Datos de las redes sociales
+const socialMediaData = [
+  {
+    name: "App Web",
+    icon: Link,
+    link: "https://yehison-perdomo.netlify.app/",
+  },
+  {
+    name: "App Web",
+    icon: Github,
+    link: "https://github.com/yehison93/portfolio",
+  },
+];
+
+// Datos de los colaboradores
+const collaborationsData = [
+  {
+    name: "DG. Emily Castro",
+    socialMedia: [
+      {
+        name: "LinkedIn",
+        icon: Linkedin,
+        link: "https://www.linkedin.com/in/emilyda-castrog/",
+      },
+    ],
+  },
+];
+
+// Datos de las imágenes
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "../../assets/projects/Portfolio/*.{jpeg,jpg,png,gif}"
+);
+const imagesItems = Object.keys(images);
+
+// Datos del carrusel
+const carouselsData = {
+  data: imagesItems.map((item, index) => {
+    return {
+      title: null,
+      description: `Imagen del proyecto Portfolio de Yehison Perdomo 0${index + 1}`,
+      imageLink: null,
+      imagePath: imagesItems,
+    };
+  }),
+  allImages: images,
+};
+
+// Código del proyecto
+const projectCode = [
+  "https://gist.github.com/yehison93/623625b204ab96f3cc78ea2045d96864.js",
+  "https://gist.github.com/yehison93/9bce57240dd0fec10a5b0ddd19c9b10f.js",
+];
+
+// Página
+const pageData = {
+  title: projectConfig.title,
+  subTitle: projectConfig.subTitle,
+  description: projectConfig.description,
+};
+---
+
+<Layout pageData={pageData}>
+  <Projects
+    projectData={{
+      ...projectData,
+      carouselsData,
+      dataSocialMedia: socialMediaData,
+      collaborations: collaborationsData,
+      projectCode,
+    }}
+  />
+</Layout>;
+

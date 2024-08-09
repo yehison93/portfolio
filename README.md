@@ -1,54 +1,40 @@
-# Astro Starter Kit: Basics
+# Yehison Perdomo's Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+## About Me
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Desarrollo interfaces atractivas y funcionales para aplicaciones web complejas, centrándome en la experiencia del usuario (UI/UX).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Portfolio Overview
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+Este portafolio es una muestra de mis habilidades y experiencia en el desarrollo web. Está diseñado para mostrar mis proyectos y habilidades en una forma clara y atractiva.
 
-## 🚀 Project Structure
+## Tecnologías utilizadas
 
-Inside of your Astro project, you'll see the following folders and files:
+Este proyecto utiliza las siguientes tecnologías:
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- **Astro**: Un framework de construcción de sitios web moderno y rápido que me permite crear aplicaciones web escalables y seguras.
+- **React**: Una biblioteca de JavaScript popular para construir interfaces de usuario interactivas y dinámicas.
+- **Bootstrap**: Un framework de CSS popular para crear diseños responsivos y atractivos.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Características
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Este portafolio cuenta con las siguientes características:
 
-Any static assets, like images, can be placed in the `public/` directory.
+- Diseño responsivo para una experiencia óptima en diferentes dispositivos y tamaños de pantalla.
+- Navegación intuitiva y fácil de usar.
+- Sección de proyectos que muestra mis trabajos más destacados.
+- Sección de about que proporciona información adicional sobre mí y mi experiencia.
 
-## 🧞 Commands
+## Links
 
-All commands are run from the root of the project, from a terminal:
+- [Home](https://yehison-perdomo.netlify.app/)
+- [About](https://yehison-perdomo.netlify.app/about/)
+- [Projects](https://yehison-perdomo.netlify.app/menu/projects/)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Contribuciones
 
-## 👀 Want to learn more?
+Si deseas contribuir a este proyecto o tienes alguna sugerencia, por favor no dudes en abrir un issue o pull request.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Licencia
+
+Este proyecto está bajo la licencia MIT.

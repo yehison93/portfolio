@@ -2,5 +2,5 @@
   "cSpell.language": "en,es",
   "cSpell.enableFiletypes": ["astro", "dart"],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cSpell.words": ["Perdomo", "Yehison"]
+  "cSpell.words": ["Perdomo", "renderizados", "Yehison"]
 }
