@@ -1,20 +1,12 @@
 ---
-const { dataSkills } = Astro.props;
+import ShuffledBadge from "./ShuffledBadge";
 
-const shuffledSkills = [...dataSkills].sort(() => Math.random() - 0.5);
+const { dataSkills } = Astro.props;
 ---
 
-<div class="container">
-  <div class="row p-1 m-auto container-skills-main">
-    {
-      shuffledSkills.map((item) => (
-        <div class="col badge container-badges">{item}</div>
-      ))
-    }
-  </div>
-</div>
+<ShuffledBadge client:load dataSkills={dataSkills} />
 
-<style>
+<style is:inline>
   .container-badges {
     font-size: calc(0.4rem + 1vw);
     color: var(--blueFour);
