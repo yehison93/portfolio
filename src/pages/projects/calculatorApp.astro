@@ -9,7 +9,7 @@ const projectConfig = {
   title: "Proyecto",
   subTitle: "Calculator App",
   description:
-    "Página que muestra información sobre el proyecto MovieSeriesFinder",
+    "Página que muestra información sobre el proyecto Calculator App",
 };
 
 // Datos del proyecto
@@ -21,13 +21,10 @@ const projectData = {
       name: "Yehison Perdomo",
     },
   ],
-  shortDescription: "Reseñas de películas, series y Personajes",
+  shortDescription: "Calculadora Tradicional",
   largeDescription: [
-    "MovieSeriesFinder, como su nombre lo indica es un buscador de películas y series, pero también puede mostrar personajes y colecciones.",
-    "Se trata de una App Web que muestra un formulario donde puedes buscar clasificando por tipo o a través del título o referencia.",
-    "Es muy simple pero potente, la búsqueda es en tiempo real sin refrescar la página, lo que hace que sea mas fluida y cómoda.",
-    "La App toma datos de un API, y la muestra en una lista fluida de coincidencias.",
-    "Se construyó usando la  herramienta de compilación Vite y el FrameWork React, Bootstrap sirvió para potenciar los estilos. Para la base de datos de uso la API de The Movie Data Base (TMDB)",
+    `Se trata de un proyecto requerido para aprobar el certificado de "Front End Development Libraries"de FreeCodeCamp.`,
+    "Esta aplicación de calculadora permite a los usuarios realizar operaciones básicas de matemáticas, como sumas, restas, multiplicaciones y divisiones, y también operaciones con decimales. La aplicación cuenta con una pantalla que muestra el resultado de las operaciones y un panel de botones para introducir números y operadores.",
   ],
   skills: [
     "React",
@@ -35,16 +32,11 @@ const projectData = {
     "HTML",
     "Vite",
     "Bootstrap",
-    "TMDB",
     "App Web",
     "Diseño",
     "Java Script",
-    "Movie",
-    "Series",
-    "Search",
-    "API",
-    "Persons",
-    "Collections",
+    "Calculator",
+    "Math.js",
   ],
   typeProject: "Público",
   state: "Publicado",
@@ -55,12 +47,12 @@ const socialMediaData = [
   {
     name: "App Web",
     icon: Link,
-    link: "https://movieseriesfinder.netlify.app/",
+    link: "https://calculator-app-one.netlify.app/",
   },
   {
     name: "App Web",
     icon: Github,
-    link: "https://github.com/yehison93/MovieSeriesFinder",
+    link: "https://github.com/yehison93/calculator-app",
   },
 ];
 
@@ -69,7 +61,7 @@ const collaborationsData = null;
 
 // Datos de las imágenes
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "../../assets/projects/MovieSeriesFinder/*.{jpeg,jpg,png,gif.mp4}"
+  "../../assets/projects/CalculatorApp/*.{jpeg,jpg,png,gif}"
 );
 const imagesItems = Object.keys(images);
 
@@ -78,8 +70,8 @@ const carouselsData = {
   data: imagesItems.map((item, index) => {
     return {
       title: null,
-      description: `Imagen del proyecto MovieSeriesFinder 0${index + 1}`,
-      imageLink: "https://movieseriesfinder.netlify.app/",
+      description: `Imagen del proyecto CalculatorApp 0${index + 1}`,
+      imageLink: "https://calculator-app-one.netlify.app/",
       imagePath: imagesItems,
     };
   }),
@@ -88,8 +80,8 @@ const carouselsData = {
 
 // Código del proyecto
 const projectCode = [
-  "https://gist.github.com/yehison93/6ced18b54ed02a89ed4251df80adf5c5.js",
-  "https://gist.github.com/yehison93/c1e6a33f0f071b8f4c3d5b647f361aa8.js",
+  "https://gist.github.com/yehison93/7baf5157999310a7e42bc645c7eccb0c.js",
+  "https://gist.github.com/yehison93/1a43fcf656f6e0c0071134b1c12551f1.js",
 ];
 
 // Página
