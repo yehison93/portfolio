@@ -16,14 +16,41 @@ const data = resources.info.avatar;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta
-      name="description"
-      content={pageData.description || data.description}
-    />
     <link rel="icon" type="image/png" href="/faviconYehison.png" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="author" content={data.name} />
     <title>{`${pageData.title} ${pageData.subTitle}`.trim()}</title>
+
+    <!-- ...existing code... -->
+
+    <!-- Open Graph Tags -->
+    <meta
+      property="og:title"
+      content={pageData.title || "Yehison Perdomo - Portafolio"}
+    />
+    <meta
+      property="og:description"
+      content={pageData.description || data.description}
+    />
+    <meta property="og:image" content="src/assets/image/fotoYehison.png" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content={pageData.title || "Yehison Perdomo - Portafolio"}
+    />
+    <meta
+      name="twitter:description"
+      content={pageData.description || data.description}
+    />
+    <meta name="twitter:image" content="src/assets/image/fotoYehison.png" />
+    <meta name="twitter:url" content={Astro.url.href} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={Astro.url.href} />
     <ViewTransitions />
     <script
       type="module"
@@ -31,6 +58,7 @@ const data = resources.info.avatar;
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"></script>
   </head>
+
   <body id="main-body">
     <Frame />
     <Main pageData={pageData}>
@@ -40,93 +68,92 @@ const data = resources.info.avatar;
       <div class="copyright">&copy; By {data.name} - {currentYear}</div>
     </footer>
     <Colors client:load />
-  </body>
-</html>
-<style is:global>
-  @import url("https://cdn.rawgit.com/lonekorean/gist-syntax-themes/848d6580/stylesheets/monokai.css");
-  @import url("https://fonts.googleapis.com/css2?family=Anta&family=Fira+Code:wght@300..700&display=swap");
+  </body><style is:global>
+    @import url("https://cdn.rawgit.com/lonekorean/gist-syntax-themes/848d6580/stylesheets/monokai.css");
+    @import url("https://fonts.googleapis.com/css2?family=Anta&family=Fira+Code:wght@300..700&display=swap");
 
-  :root {
-    --blueOne: #00faf8;
-    --blueTwo: #2f82f5;
-    --blueThree: #005cfa;
-    --blueFour: #001020;
-    --fontTitle: "anta";
-    --fontText: "Fira Code";
-  }
-
-  * {
-    user-select: none;
-    font-size: 16px;
-    font-family: var(--fontText), monospace;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    color: white;
-  }
-
-  body,
-  html {
-    overflow: hidden;
-    cursor: url(/public/cursor-32x32.svg), auto;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--colorFour);
-  }
-
-  h1,
-  h3,
-  h5 {
-    font-family: var(--fontTitle), "Arial Narrow Bold", sans-serif;
-  }
-  p {
-    font-size: 1.2em;
-    font-weight: 300;
-    hyphens: auto;
-    text-align: justify;
-  }
-
-  strong {
-    font-family: var(--fontTitle);
-    font-weight: bolder;
-  }
-
-  .underline {
-    content: " ";
-    position: absolute;
-    left: -20px;
-    bottom: -5px;
-    width: calc(290px + 5vw);
-    height: 5px;
-    background: linear-gradient(
-      to right,
-      var(--colorOne),
-      var(--colorTwo),
-      var(--blueFour)
-    );
-  }
-
-  .container-footer {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    text-align: center;
-    bottom: 0;
-    width: 100vw;
-    min-height: 10vh;
-    background: linear-gradient(0deg, var(--colorFour), transparent);
-  }
-
-  .copyright {
-    text-align: center;
-    font-size: calc(0.5rem + 0.5vw);
-  }
-
-  @media screen and (max-width: 768px) {
-    p {
-      text-align: justify;
-      font-size: 1rem;
+    :root {
+      --blueOne: #00faf8;
+      --blueTwo: #2f82f5;
+      --blueThree: #005cfa;
+      --blueFour: #001020;
+      --fontTitle: "anta";
+      --fontText: "Fira Code";
     }
-  }
-</style>
+
+    * {
+      user-select: none;
+      font-size: 16px;
+      font-family: var(--fontText), monospace;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      color: white;
+    }
+
+    body,
+    html {
+      overflow: hidden;
+      cursor: url(/public/cursor-32x32.svg), auto;
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--colorFour);
+    }
+
+    h1,
+    h3,
+    h5 {
+      font-family: var(--fontTitle), "Arial Narrow Bold", sans-serif;
+    }
+    p {
+      font-size: 1.2em;
+      font-weight: 300;
+      hyphens: auto;
+      text-align: justify;
+    }
+
+    strong {
+      font-family: var(--fontTitle);
+      font-weight: bolder;
+    }
+
+    .underline {
+      content: " ";
+      position: absolute;
+      left: -20px;
+      bottom: -5px;
+      width: calc(290px + 5vw);
+      height: 5px;
+      background: linear-gradient(
+        to right,
+        var(--colorOne),
+        var(--colorTwo),
+        var(--blueFour)
+      );
+    }
+
+    .container-footer {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      text-align: center;
+      bottom: 0;
+      width: 100vw;
+      min-height: 10vh;
+      background: linear-gradient(0deg, var(--colorFour), transparent);
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: calc(0.5rem + 0.5vw);
+    }
+
+    @media screen and (max-width: 768px) {
+      p {
+        text-align: justify;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</html>
