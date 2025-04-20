@@ -5,7 +5,6 @@ import Main from "../components/Main.astro";
 import { ViewTransitions } from "astro:transitions";
 import resources from "../resources/resources.json";
 import Colors from "../components/Colors.jsx";
-import fotoDeYehison from "../assets/image/fotoYehison.png";
 const { pageData } = Astro.props;
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
@@ -43,10 +42,7 @@ const data = resources.info.avatar;
       content={pageData.description || data.description}
     />
 
-    <meta
-      property="og:image"
-      content={`https://yehison-perdomo.netlify.app${fotoDeYehison}`}
-    />
+    <meta property="og:image" content="/faviconYehison.png" />
     <meta property="og:url" content={Astro.url.href} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
@@ -61,10 +57,7 @@ const data = resources.info.avatar;
       name="twitter:description"
       content={pageData.description || data.description}
     />
-    <meta
-      name="twitter:image"
-      content={`https://yehison-perdomo.netlify.app${fotoDeYehison}`}
-    />
+    <meta name="twitter:image" content="/faviconYehison.png" />
     <meta name="twitter:url" content={Astro.url.href} />
 
     <!-- Canonical URL -->
