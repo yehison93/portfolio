@@ -10,15 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^4.2.4",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "astro": "^5.7.4",
+    "@astrojs/react": "^3.6.3",
+    "@types/react": "^18.3.20",
+    "@types/react-dom": "^18.3.6",
+    "astro": "^4.16.18",
     "bootstrap": "^5.3.5",
     "react": "^18.3.1",
     "react-bootstrap-icons": "^1.11.5",
     "react-dom": "^18.3.1",
-    "sharp": "^0.34.1"
+    "sharp": "^0.33.5"
   },
   "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e"
 }
