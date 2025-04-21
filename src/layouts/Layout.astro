@@ -2,7 +2,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Frame from "../components/Frame.astro";
 import Main from "../components/Main.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import resources from "../resources/resources.json";
 import Colors from "../components/Colors.jsx";
 const { pageData } = Astro.props;
@@ -19,12 +19,14 @@ const portalUrl = "https://yehison-perdomo.netlify.app";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/faviconYehison.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>{`${pageData.title} ${pageData.subTitle}`.trim()}</title>
+    <title>
+      {`${pageData?.title || ""} ${pageData?.subTitle || ""}`.trim()}
+    </title>
 
     <!-- Meta Tags para SEO -->
     <meta
       name="description"
-      content={pageData.description || data.description}
+      content={pageData?.description || data?.description || ""}
     />
     <meta
       name="keywords"
@@ -66,7 +68,7 @@ const portalUrl = "https://yehison-perdomo.netlify.app";
     <link rel="canonical" href={`${portalUrl}${Astro.url.pathname}`} />
 
     <!-- Otras necesarias -->
-    <ViewTransitions />
+    <ClientRouter />
     <script
       type="module"
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

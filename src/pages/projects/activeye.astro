@@ -103,6 +103,10 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 );
 const imagesItems = Object.keys(images);
 
+if (imagesItems.length === 0) {
+  console.warn("No se encontraron imágenes para ActivEye.");
+}
+
 // Datos del carrusel
 const carouselsData = {
   data: imagesItems.map((item, index) => {

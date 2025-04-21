@@ -11,11 +11,11 @@ const { projectData } = Astro.props;
 <div class="container">
   <div class="row text-center">
     <h3>{projectData.shortDescription}</h3>
-    <BadgesSkills dataSkills={projectData.skills} />
-    <ImageCarousels carouselsData={projectData.carouselsData} />
+    <BadgesSkills dataSkills={projectData.skills || []} />
+    <ImageCarousels carouselsData={projectData.carouselsData || {}} />
   </div>
   <div class="my-3">
-    <ProjectData projectData={projectData} />
+    <ProjectData projectData={projectData || {}} />
     <h3 class="position-relative mb-3">
       Descripción
       <div class="underline"></div>
@@ -31,7 +31,7 @@ const { projectData } = Astro.props;
       projectData.dataSocialMedia && (
         <>
           <h3>Míralo en acción</h3>
-          <SocialMedia dataSocialMedia={projectData.dataSocialMedia} />
+          <SocialMedia dataSocialMedia={projectData.dataSocialMedia || []} />
         </>
       )
     }
@@ -41,6 +41,6 @@ const { projectData } = Astro.props;
       Fragmentos del proyecto
       <div class="underline"></div>
     </h3>
-    <ProjectCode projectCode={projectData.projectCode} />
+    <ProjectCode projectCode={projectData.projectCode || []} />
   </div>
 </div>

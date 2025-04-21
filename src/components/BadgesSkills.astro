@@ -1,10 +1,10 @@
 ---
 import ShuffledBadge from "./ShuffledBadge";
 
-const { dataSkills } = Astro.props;
+const { dataSkills = [] } = Astro.props;
 ---
 
-<ShuffledBadge client:load dataSkills={dataSkills} />
+<ShuffledBadge client:only="react" dataSkills={dataSkills} />
 
 <style is:inline>
   .container-badges {
