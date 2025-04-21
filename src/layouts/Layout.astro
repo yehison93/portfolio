@@ -9,6 +9,7 @@ const { pageData } = Astro.props;
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
 const data = resources.info.avatar;
+const portalUrl = "https://yehison-perdomo.netlify.app";
 ---
 
 <!doctype html>
@@ -42,8 +43,8 @@ const data = resources.info.avatar;
       content={pageData.description || data.description}
     />
 
-    <meta property="og:image" content=`${Astro.url.href}/faviconYehison.png` />
-    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:image" content=`${portalUrl}/faviconYehison.png` />
+    <meta property="og:url" content={portalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
 
@@ -57,8 +58,8 @@ const data = resources.info.avatar;
       name="twitter:description"
       content={pageData.description || data.description}
     />
-    <meta name="twitter:image" content=`${Astro.url.href}/faviconYehison.png` />
-    <meta name="twitter:url" content={Astro.url.href} />
+    <meta name="twitter:image" content=`${portalUrl}/faviconYehison.png` />
+    <meta name="twitter:url" content={portalUrl} />
     <meta name="twitter:site" content="@PerdomoYehison" />
 
     <!-- Canonical URL -->
