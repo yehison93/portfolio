@@ -16,7 +16,7 @@ const portalUrl = "https://yehison-perdomo.netlify.app";
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href="/faviconYehison.png" />
     <meta name="generator" content={Astro.generator} />
     <title>
@@ -30,7 +30,7 @@ const portalUrl = "https://yehison-perdomo.netlify.app";
     />
     <meta
       name="keywords"
-      content=`portafolio, desarrollador web, proyectos, Yehison Perdomo, diseño web, desarrollo frontend, desarrollo backend ${data.skills}`
+      content={`portafolio, desarrollador web, proyectos, Yehison Perdomo, diseño web, desarrollo frontend, desarrollo backend ${Array.isArray(data.skills) ? data.skills.join(", ") : data.skills || ""}`}
     />
     <meta name="author" content={data.name} />
     <meta name="robots" content="index, follow" />
@@ -45,7 +45,7 @@ const portalUrl = "https://yehison-perdomo.netlify.app";
       content={pageData.description || data.description}
     />
 
-    <meta property="og:image" content=`${portalUrl}/faviconYehison.png` />
+    <meta property="og:image" content={`${portalUrl}/faviconYehison.png`} />
     <meta property="og:url" content={portalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
@@ -60,7 +60,7 @@ const portalUrl = "https://yehison-perdomo.netlify.app";
       name="twitter:description"
       content={pageData.description || data.description}
     />
-    <meta name="twitter:image" content=`${portalUrl}/faviconYehison.png` />
+    <meta name="twitter:image" content={`${portalUrl}/faviconYehison.png`} />
     <meta name="twitter:url" content={portalUrl} />
     <meta name="twitter:site" content="@PerdomoYehison" />
 
@@ -95,6 +95,10 @@ const portalUrl = "https://yehison-perdomo.netlify.app";
     --blueTwo: #2f82f5;
     --blueThree: #005cfa;
     --blueFour: #001020;
+    --colorOne: var(--blueOne);
+    --colorTwo: var(--blueTwo);
+    --colorThree: var(--blueThree);
+    --colorFour: var(--blueFour);
     --fontTitle: "anta";
     --fontText: "Fira Code";
   }
@@ -112,7 +116,7 @@ const portalUrl = "https://yehison-perdomo.netlify.app";
   body,
   html {
     overflow: hidden;
-    cursor: url(/public/cursor-32x32.svg), auto;
+    cursor: url(/cursor-32x32.svg), auto;
     width: 100vw;
     height: 100vh;
     background-color: var(--colorFour);
