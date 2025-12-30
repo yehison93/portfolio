@@ -11,11 +11,8 @@ const { projectCode } = Astro.props;
     ))
   }
   <div class="alert alert-info" role="alert">
-    Si no ha cargado el bloque de código <a
-      class="alert-link"
-      href=""
-      id="refresh-link">refresca la página</a
-    >
+    Si no ha cargado el bloque de código
+    <a class="alert-link" href="" id="refresh-link">refresca la página </a>
   </div>
   <script is:inline>
     document.getElementById("refresh-link").addEventListener("click", () => {
